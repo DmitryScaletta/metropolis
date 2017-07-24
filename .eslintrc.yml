@@ -1,0 +1,18 @@
+extends: airbnb-base
+env:
+  browser: true
+plugins:
+  - import
+  - compat
+rules:
+  max-len: off
+  no-plusplus: off
+  no-multi-spaces: off
+  no-whitespace-before-property: off
+  key-spacing:
+    - error
+    - mode: minimum
+  compat/compat: error
+# settings:
+#  polyfills:
+#    - fetch

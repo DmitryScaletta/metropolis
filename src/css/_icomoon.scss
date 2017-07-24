@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'icomoon';
+  src:
+    url('../fonts/icomoon.woff2?kzaoyk') format('woff2'),
+    url('../fonts/icomoon.woff?kzaoyk') format('woff'),
+    url('../fonts/icomoon.ttf?kzaoyk') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-vcard::before {
+  content: $icon-vcard;
+}
+
+.icon-location::before {
+  content: $icon-location;
+}
+
+.icon-building-1::before {
+  content: $icon-building-1;
+}
+
+.icon-building-2::before {
+  content: $icon-building-2;
+}
+
+.icon-keys::before {
+  content: $icon-keys;
+}
+
+.icon-home::before {
+  content: $icon-home;
+}
+
+.icon-wallet::before {
+  content: $icon-wallet;
+}
+
+.icon-close::before {
+  content: $icon-close;
+}
+
+.icon-mobile::before {
+  content: $icon-mobile;
+}
+
+.icon-user::before {
+  content: $icon-user;
+}

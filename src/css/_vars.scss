@@ -1,0 +1,69 @@
+$screen-sm:           576px;
+$screen-md:           768px;
+$screen-lg:           992px;
+$screen-xl:           1200px;
+
+$container-max-sm:    540px;
+$container-max-md:    720px;
+$container-max-lg:    960px;
+$container-max-xl:    1140px;
+
+// colors
+$color-primary:       #f05152;
+$color-secondary:     #42b763;
+$color-thirdly:       #f89939;
+$color-fourfly:       #66a0d6;
+$color-text-dark:     #383838;
+$color-text-soft:     #606060;
+$color-text-softer:   #909090;
+$color-text-light:    #fff;
+$color-text-accent:   #bcdbf8;
+$color-bg-dark:       $color-text-dark;
+$color-bg-light:      #e6e6e6;
+
+$transition-duration: 0.2s;
+$transition-function: linear;
+
+// font
+$font-primary:        'TeX Gyre Heros', 'Open Sans', Arial, sans-serif;
+$global-line-height:  1.5;
+$rem-baseline:        16px;
+
+// grid
+$grid-gutter-width:   30px;
+
+$grid-breakpoints: (
+  sm: $screen-sm,
+  md: $screen-md,
+  lg: $screen-lg,
+  xl: $screen-xl,
+);
+
+$grid-max-widths: (
+  sm: $container-max-sm,
+  md: $container-max-md,
+  lg: $container-max-lg,
+  xl: $container-max-xl,
+);
+
+// icons
+$icon-vcard:      "\e803";
+$icon-location:   "\e805";
+$icon-building-1: "\e902";
+$icon-building-2: "\e903";
+$icon-keys:       "\e904";
+$icon-home:       "\e900";
+$icon-wallet:     "\e901";
+$icon-close:      "\f00d";
+$icon-mobile:     "\f10b";
+$icon-user:       "\f2c0";
+
+// habmurger
+$hamburger-padding-x:                        10px;
+$hamburger-padding-y:                        13px;
+$hamburger-layer-width:                      32px;
+$hamburger-layer-color:                      $color-text-light;
+$hamburger-types:                            (squeeze);
+$hamburger-hover-transition-duration:        $transition-duration;
+$hamburger-hover-transition-timing-function: $transition-function;
+
