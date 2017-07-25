@@ -4,15 +4,18 @@ import 'owl.carousel';
 
 // mobile menu
 (() => {
-  const menuContainer = document.querySelector('.js-menu');
-  const menuToggle    = document.querySelector('.js-menu-toggle');
-  if (menuContainer === null || menuToggle === null) return;
+  const navbarContainer = document.querySelector('.js-navbar');
+  if (navbarContainer === null) return;
+
+  const menuToggle  = navbarContainer.querySelector('.js-menu-toggle');
+  const menuOverlay = navbarContainer.querySelector('.js-menu-overlay');
+  if (menuToggle === null || menuOverlay === null) return;
 
   const classNameActive = 'active';
 
-  const toggleMenu = () => menuContainer.classList.toggle(classNameActive);
+  const toggleMenu = () => navbarContainer.classList.toggle(classNameActive);
 
-  menuToggle.addEventListener('click', toggleMenu);
+  [menuToggle, menuOverlay].forEach(elem => elem.addEventListener('click', toggleMenu));
 })();
 
 

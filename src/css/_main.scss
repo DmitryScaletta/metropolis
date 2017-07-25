@@ -143,8 +143,26 @@ body {
     @extend %flex-nowrap;
 
     position: relative;
-    background: #fff;
+    z-index: 5;
     box-shadow: $box-shadow;
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+    }
+
+    &.active {
+      .header__nav,
+      .header__overlay {
+        display: block;
+      }
+    }
   }
 
   &__logo {
@@ -158,17 +176,12 @@ body {
 
     display: none;
     position: absolute;
-    z-index: 5;
     top: 100%;
     left: 0;
     right: 0;
     border-top: 1px solid $color-bg-light;
     background: #fff;
     box-shadow: $box-shadow;
-
-    &.active {
-      display: block;
-    }
 
     @media (min-width: $screen-lg) {
       display: flex;
@@ -185,6 +198,17 @@ body {
     @media (min-width: $screen-xl) {
       padding-right: 50px;
     }
+  }
+
+  &__overlay {
+    display: none;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(#000, 0.6);
   }
 
   &__mobile {

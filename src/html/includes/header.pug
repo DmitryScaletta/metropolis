@@ -3,7 +3,7 @@ header.header
     .header__top
       .header__location= contacts.address
       a(href=`tel:${contacts.phone.number}`).header__phone= contacts.phone.text
-    .header__navbar
+    .header__navbar.js-navbar
       .header__logo
         a(href='index.html').logo
       .header__nav.js-menu
@@ -12,6 +12,7 @@ header.header
             each item, i in menu
               li.header-nav__item(class=(i === 0) ? 'active' : '')
                 a(href=item.link).header-nav__link= item.text
+      .header__overlay.js-menu-overlay
       .header__mobile
         button.button.button--secondary.header__toggler.js-menu-toggle Меню
     .header__bottom
