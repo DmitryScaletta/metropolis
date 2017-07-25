@@ -87,8 +87,8 @@ img {
   position: absolute;
   padding: 10px;
   margin-bottom: 5px;
-  // background: $color-secondary;
-  // color: $color-text-light;
+  background: $color-primary;
+  color: $color-text-light;
   text-align: center;
   border-radius: 3px;
 
@@ -98,7 +98,7 @@ img {
     position: absolute;
     margin: 5px;
     border-style: solid;
-    // border-color: $color-secondary;
+    border-color: $color-primary;
   }
 
   &[x-placement^="top"] {

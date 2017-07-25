@@ -1,3 +1,4 @@
+import Tooltip from 'tooltip.js';
 import $ from 'jquery';
 import 'owl.carousel';
 
@@ -133,3 +134,47 @@ $('.js-slider-partners').owlCarousel({
     },
   },
 });
+
+
+// form validation
+(() => {
+  Array.prototype.forEach.call(
+    document.querySelectorAll('.form'),
+    (form) => {
+      const validatedItems = [
+        form.querySelector('input[name=name]'),
+        form.querySelector('input[name=tel]'),
+      ].filter(item => item !== null);
+
+      const tooltips = validatedItems.map(item => new Tooltip(item, {
+        title: 'Это обязательное поле',
+        trigger: '',
+      }));
+
+      const classNameInvalid = 'invalid';
+
+      // remove invalid class on focus
+      validatedItems.forEach((elem, index) => {
+        elem.addEventListener('focus', () => {
+          elem.classList.remove(classNameInvalid);
+          tooltips[index].hide();
+        });
+      });
+
+      const validateTextInput = value => value.trim() !== '';
+
+      form.addEventListener('submit', (e) => {
+        const isFormValid = validatedItems.every((item, index) => {
+          const isItemValid = validateTextInput(item.value);
+          if (!isItemValid) {
+            item.classList.add(classNameInvalid);
+            tooltips[index].show();
+          }
+          return isItemValid;
+        });
+
+        if (!isFormValid) e.preventDefault();
+      });
+    },
+  );
+})();
