@@ -1115,8 +1115,6 @@ body {
 }
 
 .partners {
-  // padding: 0 20px;
-
   @media (min-width: $screen-sm) {
     padding: 0 30px;
   }
@@ -1130,9 +1128,7 @@ body {
     align-items: center;
   }
 
-  // &__item {}
-
-  .owl-item {
+  &__item {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
