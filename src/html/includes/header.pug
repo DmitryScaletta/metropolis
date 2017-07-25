@@ -1,0 +1,38 @@
+header.header
+  .header__inner
+    .header__top
+      .header__location= contacts.address
+      a(href=`tel:${contacts.phone.number}`).header__phone= contacts.phone.text
+    .header__navbar
+      .header__logo
+        a(href='index.html').logo
+      .header__nav.js-menu
+        nav.header-nav
+          ul.header-nav__list
+            each item, i in menu
+              li.header-nav__item(class=(i === 0) ? 'active' : '')
+                a(href=item.link).header-nav__link= item.text
+      .header__mobile
+        button.button.button--secondary.header__toggler.js-menu-toggle Меню
+    .header__bottom
+      .header__caption
+        h1.header__title Хотите купить или продать <br> квартиру в Краснодаре?
+        .header__subtitle Самый <span class='green'><strong>низкий риэлторский %</strong></span> в городе <br> + <span class='orange'><strong>БЕСПЛАТНОЕ</strong></span> юридическое <br>сопровождение сделки!
+        button.button.header__button Заказать консультацию
+      .header__circles
+        .header__icon
+        .header__form
+          form.header-form
+            .header-form__title Закажи <strong>БЕСПЛАТНУЮ</strong> консультацию!
+            .header-form__input-group.header-form__input-group--user
+              input(type='text', name='name', placeholder='Ваше имя').header-form__input
+            .header-form__input-group.header-form__input-group--phone
+              input(type='text', name='tel', placeholder='Телефон').header-form__input
+            .header-form__button-wrapper
+              button.button Заказать
+            a(href='#').header-form__link Политика конфиденциальности
+        .header__info
+          span Мы
+          span не передёем
+          span информацию
+          | третьим лицам <br> без вашего <br> согласия

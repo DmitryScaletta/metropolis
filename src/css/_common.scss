@@ -24,18 +24,63 @@ body {
 a {
   @extend %transition;
 
-  color: $color-fourfly;
+  color: $color-fourthly;
   text-decoration: none;
   transition-property: color;
 
   &:hover {
-    // color: $color-fourfly;
+    color: $color-primary;
   }
 }
 
 img {
   max-width: 100%;
   max-height: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.green {
+  color: $color-secondary;
+}
+
+.orange {
+  color: $color-thirdly;
+}
+
+.blue {
+  color: $color-fourthly;
+}
+
+.button {
+  @extend %transition;
+
+  display: inline-block;
+  padding: 14px 25px;
+  font-size: 14px;
+  border-radius: 2px;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: $color-primary;
+  color: $color-text-light;
+  cursor: pointer;
+  transition-property: color, background-color;
+
+  &:hover {
+    background: darken($color-primary, 5%);
+    color: darken($color-text-light, 5%);
+  }
+
+  &--secondary {
+    background: $color-secondary;
+
+    &:hover {
+      background: darken($color-secondary, 5%);
+    }
+  }
 }
 
 .tooltip {
@@ -114,5 +159,41 @@ img {
       margin-left: 0;
       margin-right: 0;
     }
+  }
+}
+
+.slider-arrow {
+  &-left,
+  &-right {
+    &::after {
+      @extend %transition;
+
+      content: '';
+      display: block;
+      position: absolute;
+      margin-top: -11px;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      transform: rotate(45deg);
+      border: 1px solid $color-bg-light;
+      transition-property: border-color;
+    }
+
+    &:hover::after {
+      border-color: $color-fourthly;
+    }
+  }
+
+  &-left::after {
+    left: 4px;
+    border-top: none;
+    border-right: none;
+  }
+
+  &-right::after {
+    right: 4px;
+    border-bottom: none;
+    border-left: none;
   }
 }

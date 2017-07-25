@@ -2,3 +2,62 @@ extends layout/main.pug
 
 block content
 
+  section.section
+    .section__inner
+      h2.section__title О ваших выгодах за 60 секунд
+      .section__content.center
+        .responsive-video.js-youtube(data-embed='dQw4w9WgXcQ')
+          .responsive-video__button
+
+  section.section
+    .section__inner
+      h2.section__title Что мы предлагаем
+      .section__content.services
+        each service in services
+          .services__item
+            .service(class=`service--${service.icon}`)
+              .service__title!= service.title
+              .service__subtitle!= service.subtitle
+              .service__desc!= service.desc
+              button.button.service__button Подробнее
+
+  section.section.section--features
+    .section__inner
+      h2.section__title Метрополис в цифрах
+      .section__content.features
+        each feature in features
+          .features__item
+            .features__value= feature.value
+            .features__title= feature.title
+
+  section.section
+    .section__inner
+      h2.section__title Отзывы
+      .section__content.reviews.owl-carousel.js-slider-reviews
+        each review in [...reviews, ...reviews, ...reviews]
+          .review(class=`review--${review.icon}`).js-review-item
+            .review__info
+              .review__avatar(style=`background-image: url('img/media/${review.avatar}')`)
+              .review__name= review.name
+              .review__age= review.age
+              .review__city= review.city
+              .review__type= review.type
+              .review__params
+                each param in Object.keys(review.params)
+                  .review__param(class=`review__param--${param}`)!= review.params[param]
+              .review__preview
+                p= `${review.text[0].slice(0, 140)}...`
+            .review__text
+              each p in review.text
+                p= p
+            a.review__link.js-review-full Смотреть отзыв полностью
+    .review-popup.js-review-popup
+
+  section.section
+    .section__inner
+      h2.section__title Наши партнёры
+      .section__content
+        .partners
+          .partners__items.owl-carousel.js-slider-partners
+            each partner in [...partners, ...partners]
+              img(src=`img/media/${partner}`).partners__item

@@ -1,1 +1,23 @@
+footer.footer
+  .footer__top
+    iframe.footer__map.js-footer-map(
+      width='100%',
+      height='100%',
+      style='border:0;',
+      src='//www.google.com/maps?q=Краснодар,+Красных+Партизан+218&output=embed'
+    )
+    .footer__inner
+      .footer__contacts.footer-contacts
+        .footer-contacts__title Контакты
+        .footer-contacts__address= contacts.address
+        a(href=`tel:${contacts.phone.number}`).footer-contacts__phone= contacts.phone.text
+        .footer-contacts__button-wrapper
+          button.button Заказать звонок
+      .footer__logo
+  .footer__bottom
+    .footer__inner
+      .footer__bottom-content
+        .footer__copy-text © "Метрополис", 2017 г
+        a(href='//art6.ru').footer__copy-logo
+
 script(src='js/app.js')
