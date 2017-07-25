@@ -5,9 +5,9 @@
   src:
     local('TeX Gyre Heros'),
     local('TeXGyreHeros-Regular'),
-    url('texgyreheros-regular.woff2') format('woff2'),
-    url('texgyreheros-regular.woff') format('woff'),
-    url('texgyreheros-regular.ttf') format('truetype');
+    url('../fonts/texgyreheros-regular.woff2') format('woff2'),
+    url('../fonts/texgyreheros-regular.woff') format('woff'),
+    url('../fonts/texgyreheros-regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -17,9 +17,9 @@
   src:
     local('TeX Gyre Heros Bold'),
     local('TeXGyreHeros-Bold'),
-    url('texgyreheros-bold.woff2') format('woff2'),
-    url('texgyreheros-bold.woff') format('woff'),
-    url('texgyreheros-bold.ttf') format('truetype');
+    url('../fonts/texgyreheros-bold.woff2') format('woff2'),
+    url('../fonts/texgyreheros-bold.woff') format('woff'),
+    url('../fonts/texgyreheros-bold.ttf') format('truetype');
 }
 
 @font-face {
@@ -29,9 +29,9 @@
   src:
     local('TeX Gyre Heros Italic'),
     local('TeXGyreHeros-Italic'),
-    url('texgyreheros-italic.woff2') format('woff2'),
-    url('texgyreheros-italic.woff') format('woff'),
-    url('texgyreheros-italic.ttf') format('truetype');
+    url('../fonts/texgyreheros-italic.woff2') format('woff2'),
+    url('../fonts/texgyreheros-italic.woff') format('woff'),
+    url('../fonts/texgyreheros-italic.ttf') format('truetype');
 }
 
 @font-face {
@@ -41,7 +41,7 @@
   src:
     local('TeX Gyre Heros Bold Italic'),
     local('TeXGyreHeros-BoldItalic'),
-    url('texgyreheros-bolditalic.woff2') format('woff2'),
-    url('texgyreheros-bolditalic.woff') format('woff'),
-    url('texgyreheros-bolditalic.ttf') format('truetype');
+    url('../fonts/texgyreheros-bolditalic.woff2') format('woff2'),
+    url('../fonts/texgyreheros-bolditalic.woff') format('woff'),
+    url('../fonts/texgyreheros-bolditalic.ttf') format('truetype');
 }
