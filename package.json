@@ -31,7 +31,6 @@
     "stylelint-config-standard": "^17.0.0"
   },
   "dependencies": {
-    "hamburgers": "^0.9.1",
     "lory.js": "^2.2.1",
     "normalize.css": "^7.0.0",
     "tooltip.js": "^1.1.4"
