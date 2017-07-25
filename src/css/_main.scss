@@ -319,7 +319,7 @@ body {
 
   &__form {
     position: relative;
-    padding: 43px 67px 20px;
+    padding: 48px 67px 20px;
     z-index: 1;
     height: 405px;
     width: 405px;
@@ -445,8 +445,12 @@ body {
   text-align: center;
 
   &__title {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     font-size: rem(18px);
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 35px;
+    }
   }
 
   &__input-group {
