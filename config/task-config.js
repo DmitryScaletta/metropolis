@@ -69,6 +69,11 @@ module.exports = {
       // javascripts.dest in path-config.json
       app: ['./app.js'],
     },
+    provide: {
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+    },
   },
 
   browserSync: {
