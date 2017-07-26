@@ -20,20 +20,20 @@ header.header
         h1.header__title Хотите купить или продать <br> квартиру в Краснодаре?
         .header__subtitle Самый <span class='green'><strong>низкий риэлторский %</strong></span> в городе <br> + <span class='orange'><strong>БЕСПЛАТНОЕ</strong></span> юридическое <br>сопровождение сделки!
         button.button.header__button Заказать консультацию
-      .header__circles
-        .header__icon
-        .header__form
-          form.form.header-form
-            .header-form__title Закажи <strong>БЕСПЛАТНУЮ</strong> консультацию!
-            .header-form__input-group.header-form__input-group--user
-              input(type='text', name='name', placeholder='Ваше имя').header-form__input
-            .header-form__input-group.header-form__input-group--phone
-              input(type='text', name='tel', placeholder='Телефон').header-form__input
-            .header-form__button-wrapper
+      .header__form
+        form.form.circle-form
+          .circle-form__content
+            .circle-form__title Закажи <strong>БЕСПЛАТНУЮ</strong> консультацию!
+            .circle-form__input-group.circle-form__input-group--user
+              input(type='text', name='name', placeholder='Ваше имя').circle-form__input
+            .circle-form__input-group.circle-form__input-group--phone
+              input(type='text', name='tel', placeholder='Телефон').circle-form__input
+            .circle-form__button-wrapper
               button.button Заказать
-            a(href='#').header-form__link Политика конфиденциальности
-        .header__info
-          span Мы
-          span не передаём
-          span информацию
-          | третьим лицам <br> без вашего <br> согласия
+            a(href='#').circle-form__link Политика конфиденциальности
+          .circle-form__icon
+          .circle-form__info
+            span Мы
+            span не передаём
+            span информацию
+            | третьим лицам <br> без вашего <br> согласия
