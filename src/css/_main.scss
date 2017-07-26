@@ -360,6 +360,18 @@ body {
 .circle-form {
   text-align: center;
 
+  &.success {
+    .circle-form__title,
+    .circle-form__input-group,
+    .circle-form__button-wrapper {
+      display: none;
+    }
+
+    .circle-form__success {
+      display: block;
+    }
+  }
+
   &__content {
     position: relative;
     padding: 48px 67px 20px;
@@ -457,9 +469,32 @@ body {
 
   &__link {
     display: inline-block;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, 0);
     max-width: 160px;
     font-size: 12px;
     line-height: 1.33;
+  }
+
+  &__success {
+    display: none;
+    padding: 0 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+
+    &-title {
+      margin-bottom: 35px;
+      font-size: rem(18px);
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    // &-message {}
   }
 
   &__icon {

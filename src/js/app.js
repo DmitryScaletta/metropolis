@@ -172,6 +172,9 @@ $('.js-slider-partners').owlCarousel({
         });
 
         if (!isFormValid) e.preventDefault();
+
+        form.classList.add('success');
+        e.preventDefault();
       });
     },
   );
