@@ -74,6 +74,12 @@ import 'owl.carousel';
   const showReviewPopup = (review) => {
     removeAllChildNodes(reviewPopup);
     reviewPopup.appendChild(review.cloneNode(true));
+
+    const reviewPopupClose = reviewPopup.querySelector('.js-review-close');
+    if (reviewPopupClose !== null) {
+      reviewPopupClose.addEventListener('click', togglePopup);
+    }
+
     togglePopup();
   };
 

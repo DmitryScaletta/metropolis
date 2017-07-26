@@ -874,27 +874,6 @@ body {
 .review {
   display: inline-block;
   position: relative;
-  padding: 20px;
-  min-height: 500px;
-  background: #fff;
-  border-radius: 2px;
-  border-top-right-radius: 45px;
-  border: 1px solid $color-bg-light;
-
-  @media (min-width: $screen-sm) {
-    padding: 45px 38px;
-    min-height: 600px;
-  }
-
-  @media (min-width: $screen-lg) {
-    padding: 20px;
-    min-height: 500px;
-  }
-
-  @media (min-width: $screen-xl) {
-    padding: 45px 38px;
-    min-height: 600px;
-  }
 
   &::after {
     @extend .icon;
@@ -942,6 +921,30 @@ body {
 
     .review__type {
       color: $color-fourthly;
+    }
+  }
+
+  &__content {
+    min-height: 500px;
+    padding: 20px;
+    border-radius: 2px;
+    border-top-right-radius: 45px;
+    border: 1px solid $color-bg-light;
+    background: #fff;
+
+    @media (min-width: $screen-sm) {
+      padding: 45px 38px;
+      min-height: 600px;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: 20px;
+      min-height: 500px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 45px 38px;
+      min-height: 600px;
     }
   }
 
@@ -1045,6 +1048,37 @@ body {
     font-size: 14px;
     cursor: pointer;
   }
+
+  &__close {
+    @extend .icon;
+    @extend %transition;
+
+    display: none;
+    position: absolute;
+    z-index: -1;
+    top: -45px;
+    left: 50%;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    transform: translate(-50%, 0);
+    font-size: rem(20px);
+    background: $color-primary;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    transition-property: background-color;
+
+    &::after {
+      content: $icon-close;
+      color: $color-text-light;
+    }
+
+    &:hover {
+      background: darken($color-primary, 5%);
+    }
+  }
 }
 
 .review-popup {
@@ -1065,23 +1099,27 @@ body {
   .review {
     @extend %container;
 
-    display: flex;
     position: absolute;
-    margin: 15px 0;
+    margin: 50px 0 15px;
     top: 0;
     left: 50%;
-    flex-direction: column;
     min-height: 525px;
     transform: translate(-50%, 0);
 
-    @media (min-width: $screen-md) {
-      margin-top: 25px;
-    }
+    // @media (min-width: $screen-md) {}
 
     @media (min-width: $screen-lg) {
-      padding: 45px 38px;
       margin-top: 100px;
-      flex-direction: row;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: $screen-lg) {
+        padding: 45px 38px;
+        flex-direction: row;
+      }
     }
 
     &__info {
@@ -1120,6 +1158,10 @@ body {
 
     &__link {
       display: none;
+    }
+
+    &__close {
+      display: block;
     }
   }
 }
