@@ -1,0 +1,22 @@
+mixin circle-form(closeButton = false)
+  form.form.circle-form
+    .circle-form__content
+      .circle-form__title Закажи <strong>БЕСПЛАТНУЮ</strong> консультацию!
+      .circle-form__input-group.circle-form__input-group--user
+        input(type='text', name='name', placeholder='Ваше имя').circle-form__input
+      .circle-form__input-group.circle-form__input-group--phone
+        input(type='text', name='tel', placeholder='Телефон').circle-form__input
+      .circle-form__button-wrapper
+        button.button Заказать
+      a(href='#').circle-form__link Политика конфиденциальности
+      .circle-form__success
+        .circle-form__success-title Спасибо за заявку!
+        .circle-form__success-text Наш менеджер свяжется с вами в ближайшее время для консультации
+    .circle-form__icon
+    .circle-form__info
+      span Мы
+      span не передаём
+      span информацию
+      | третьим лицам <br> без вашего <br> согласия
+    if closeButton
+      .circle-form__close.js-popup-close

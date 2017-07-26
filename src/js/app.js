@@ -171,11 +171,39 @@ $('.js-slider-partners').owlCarousel({
           return isItemValid;
         });
 
-        if (!isFormValid) e.preventDefault();
+        if (!isFormValid) {
+          e.preventDefault();
+          return;
+        }
 
         form.classList.add('success');
         e.preventDefault();
       });
     },
   );
+})();
+
+
+// popup form
+(() => {
+  const popup = document.querySelector('.js-popup');
+  if (popup === null) return;
+
+  const classNameActive = 'active';
+
+  const togglePopup = () => popup.classList.toggle(classNameActive);
+
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) togglePopup();
+  });
+
+  Array.prototype.forEach.call(
+    document.getElementsByClassName('js-popup-open'),
+    elem => elem.addEventListener('click', togglePopup),
+  );
+
+  const popupClose = popup.querySelector('.js-popup-close');
+  if (popupClose === null) return;
+
+  popupClose.addEventListener('click', togglePopup);
 })();

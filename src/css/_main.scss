@@ -282,7 +282,6 @@ body {
     @extend %col-lg-6;
 
     display: none;
-    color: $color-text-light;
 
     @media (min-width: $screen-lg) {
       display: block;
@@ -358,7 +357,9 @@ body {
 }
 
 .circle-form {
+  position: relative;
   text-align: center;
+  color: $color-text-light;
 
   &.success {
     .circle-form__title,
@@ -526,7 +527,7 @@ body {
   }
 
   &__info {
-    padding: 40px 15px 0 43px;
+    padding: 38px 15px 0 38px;
     position: absolute;
     z-index: 0;
     top: 288px;
@@ -541,7 +542,7 @@ body {
     box-shadow: $box-shadow;
 
     @media (min-width: $screen-xl) {
-      padding: 50px 30px 0 47px;
+      padding: 46px 30px 0 48px;
       top: 320px;
       left: 320px;
       height: 200px;
@@ -563,6 +564,44 @@ body {
     span:nth-child(3) {
       margin-left: 15px;
     }
+  }
+
+  &__close {
+    @extend %close-popup-button;
+
+    position: absolute;
+    top: 25px;
+    left: 356px;
+
+    @media (min-width: $screen-xl) {
+      left: 390px;
+    }
+  }
+}
+
+%close-popup-button {
+  @extend .icon;
+  @extend %transition;
+
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  transform: translate(-50%, 0);
+  font-size: rem(20px);
+  background: $color-primary;
+  box-shadow: $box-shadow;
+  cursor: pointer;
+  transition-property: background-color;
+
+  &::after {
+    content: $icon-close;
+    color: $color-text-light;
+  }
+
+  &:hover {
+    background: darken($color-primary, 5%);
   }
 }
 
@@ -1085,34 +1124,13 @@ body {
   }
 
   &__close {
-    @extend .icon;
-    @extend %transition;
+    @extend %close-popup-button;
 
     display: none;
     position: absolute;
     z-index: -1;
     top: -45px;
     left: 50%;
-    height: 50px;
-    width: 50px;
-    line-height: 50px;
-    border-radius: 50%;
-    text-align: center;
-    transform: translate(-50%, 0);
-    font-size: rem(20px);
-    background: $color-primary;
-    box-shadow: $box-shadow;
-    cursor: pointer;
-    transition-property: background-color;
-
-    &::after {
-      content: $icon-close;
-      color: $color-text-light;
-    }
-
-    &:hover {
-      background: darken($color-primary, 5%);
-    }
   }
 }
 
@@ -1457,5 +1475,36 @@ body {
 
   50% {
     box-shadow: 0 0 0 0 rgba($color-text-dark, 0);
+  }
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  background: rgba(#000, 0.6);
+
+  &.active {
+    display: block;
+  }
+
+  .circle-form {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    @media (min-width: $screen-md) {
+      top: 50px;
+    }
+
+    @media (min-width: $screen-lg) {
+      top: 100px;
+    }
   }
 }

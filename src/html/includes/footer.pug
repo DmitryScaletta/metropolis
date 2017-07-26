@@ -10,7 +10,7 @@ footer.footer
         .footer-contacts__address= contacts.address
         a(href=`tel:${contacts.phone.number}`).footer-contacts__phone= contacts.phone.text
         .footer-contacts__button-wrapper
-          button.button Заказать звонок
+          button.button.js-popup-open Заказать звонок
       .footer__logo
   .footer__bottom
     .footer__inner
@@ -18,6 +18,9 @@ footer.footer
         .footer__copy-text © "Метрополис", 2017 г
         a(href='//art6.ru').footer__copy-logo
 
-a.floating-button
+a.floating-button.js-popup-open
+
+.popup.js-popup
+  +circle-form(true)
 
 script(src='js/app.js')
