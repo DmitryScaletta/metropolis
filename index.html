@@ -52,27 +52,31 @@
           <div class="header__subtitle">Самый <span class='green'><strong>низкий риэлторский %</strong></span> в городе
             <br>+ <span class='orange'><strong>БЕСПЛАТНОЕ</strong></span> юридическое
             <br>сопровождение сделки!</div>
-          <button class="button header__button">Заказать консультацию</button>
+          <button class="button header__button js-popup-open">Заказать консультацию</button>
         </div>
-        <div class="header__circles">
-          <div class="header__icon"></div>
-          <div class="header__form">
-            <form class="form header-form">
-              <div class="header-form__title">Закажи <strong>БЕСПЛАТНУЮ</strong> консультацию!</div>
-              <div class="header-form__input-group header-form__input-group--user">
-                <input class="header-form__input" type="text" name="name" placeholder="Ваше имя">
+        <div class="header__form">
+          <form class="form circle-form">
+            <div class="circle-form__content">
+              <div class="circle-form__title">Закажи <strong>БЕСПЛАТНУЮ</strong> консультацию!</div>
+              <div class="circle-form__input-group circle-form__input-group--user">
+                <input class="circle-form__input" type="text" name="name" placeholder="Ваше имя" />
               </div>
-              <div class="header-form__input-group header-form__input-group--phone">
-                <input class="header-form__input" type="text" name="tel" placeholder="Телефон">
+              <div class="circle-form__input-group circle-form__input-group--phone">
+                <input class="circle-form__input" type="text" name="tel" placeholder="Телефон" />
               </div>
-              <div class="header-form__button-wrapper">
+              <div class="circle-form__button-wrapper">
                 <button class="button">Заказать</button>
-              </div><a class="header-form__link" href="#">Политика конфиденциальности</a>
-            </form>
-          </div>
-          <div class="header__info"><span>Мы</span><span>не передаём</span><span>информацию</span>третьим лицам
-            <br>без вашего
-            <br>согласия</div>
+              </div><a class="circle-form__link" href="#">Политика конфиденциальности</a>
+              <div class="circle-form__success">
+                <div class="circle-form__success-title">Спасибо за заявку!</div>
+                <div class="circle-form__success-text">Наш менеджер свяжется с вами в ближайшее время для консультации</div>
+              </div>
+            </div>
+            <div class="circle-form__icon"></div>
+            <div class="circle-form__info"><span>Мы</span><span>не передаём</span><span>информацию</span>третьим лицам
+              <br>без вашего
+              <br>согласия</div>
+          </form>
         </div>
       </div>
     </div>
@@ -145,238 +149,265 @@
       <h2 class="section__title">Отзывы</h2>
       <div class="section__content reviews owl-carousel js-slider-reviews">
         <div class="review review--building-1 js-review-item">
-          <div class="review__info">
-            <div class="review__avatar" style="background-image: url('img/media/user-1.jpg');"></div>
-            <div class="review__name">Александр Зимородов</div>
-            <div class="review__age">29 лет</div>
-            <div class="review__city">г. Славянск-на-Кубани</div>
-            <div class="review__type">Покупка новостройки</div>
-            <div class="review__params">
-              <div class="review__param review__param--area">3 к. кв., 94,2 м<sup>2</sup>
+          <div class="review__content">
+            <div class="review__info">
+              <div class="review__avatar" style="background-image: url('img/media/user-1.jpg');"></div>
+              <div class="review__name">Александр Зимородов</div>
+              <div class="review__age">29 лет</div>
+              <div class="review__city">г. Славянск-на-Кубани</div>
+              <div class="review__type">Покупка новостройки</div>
+              <div class="review__params">
+                <div class="review__param review__param--area">3 к. кв., 94,2 м<sup>2</sup>
+                </div>
+                <div class="review__param review__param--cost">5 610 000 руб.</div>
+                <div class="review__param review__param--address">ул. Западный обход, 145
+                  <br>ЖК “Спортивная деревня”</div>
+                <div class="review__param review__param--company">Девелопмент-Юг</div>
               </div>
-              <div class="review__param review__param--cost">5 610 000 руб.</div>
-              <div class="review__param review__param--address">ул. Западный обход, 145
-                <br>ЖК “Спортивная деревня”</div>
-              <div class="review__param review__param--company">Девелопмент-Юг</div>
+              <div class="review__preview">
+                <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
+              </div>
             </div>
-            <div class="review__preview">
-              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
-            </div>
+            <div class="review__text">
+              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
+                и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
+              <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
+                с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
+            </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
           </div>
-          <div class="review__text">
-            <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
-              и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
-            <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
-              с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
-          </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
+          <div class="review__close js-review-close"></div>
         </div>
         <div class="review review--building-2 js-review-item">
-          <div class="review__info">
-            <div class="review__avatar" style="background-image: url('img/media/user-2.jpg');"></div>
-            <div class="review__name">Александр Зимородов</div>
-            <div class="review__age">35 лет</div>
-            <div class="review__city">г. Славянск-на-Кубани</div>
-            <div class="review__type">Покупка вторичного жилья</div>
-            <div class="review__params">
-              <div class="review__param review__param--area">3 к. кв., 89,6 м<sup>2</sup>
+          <div class="review__content">
+            <div class="review__info">
+              <div class="review__avatar" style="background-image: url('img/media/user-2.jpg');"></div>
+              <div class="review__name">Александр Зимородов</div>
+              <div class="review__age">35 лет</div>
+              <div class="review__city">г. Славянск-на-Кубани</div>
+              <div class="review__type">Покупка вторичного жилья</div>
+              <div class="review__params">
+                <div class="review__param review__param--area">3 к. кв., 89,6 м<sup>2</sup>
+                </div>
+                <div class="review__param review__param--cost">6 250 000 руб.</div>
+                <div class="review__param review__param--address">ул. Западный обход, 145
+                  <br>ЖК “Спортивная деревня”</div>
+                <div class="review__param review__param--company">AVA Group</div>
               </div>
-              <div class="review__param review__param--cost">6 250 000 руб.</div>
-              <div class="review__param review__param--address">ул. Западный обход, 145
-                <br>ЖК “Спортивная деревня”</div>
-              <div class="review__param review__param--company">AVA Group</div>
+              <div class="review__preview">
+                <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
+              </div>
             </div>
-            <div class="review__preview">
-              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
-            </div>
+            <div class="review__text">
+              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
+                и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
+              <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
+                с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
+            </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
           </div>
-          <div class="review__text">
-            <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
-              и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
-            <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
-              с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
-          </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
+          <div class="review__close js-review-close"></div>
         </div>
         <div class="review review--keys js-review-item">
-          <div class="review__info">
-            <div class="review__avatar" style="background-image: url('img/media/user-3.jpg');"></div>
-            <div class="review__name">Александра Зимородова</div>
-            <div class="review__age">27 лет</div>
-            <div class="review__city">г. Славянск-на-Кубани</div>
-            <div class="review__type">Продажа</div>
-            <div class="review__params">
-              <div class="review__param review__param--area">3 к. кв., 65,8 м<sup>2</sup>
+          <div class="review__content">
+            <div class="review__info">
+              <div class="review__avatar" style="background-image: url('img/media/user-3.jpg');"></div>
+              <div class="review__name">Александра Зимородова</div>
+              <div class="review__age">27 лет</div>
+              <div class="review__city">г. Славянск-на-Кубани</div>
+              <div class="review__type">Продажа</div>
+              <div class="review__params">
+                <div class="review__param review__param--area">3 к. кв., 65,8 м<sup>2</sup>
+                </div>
+                <div class="review__param review__param--cost">4 790 000 руб.</div>
+                <div class="review__param review__param--address">ул. Западный обход, 145
+                  <br>ЖК “Спортивная деревня”</div>
+                <div class="review__param review__param--company">Алмакс</div>
               </div>
-              <div class="review__param review__param--cost">4 790 000 руб.</div>
-              <div class="review__param review__param--address">ул. Западный обход, 145
-                <br>ЖК “Спортивная деревня”</div>
-              <div class="review__param review__param--company">Алмакс</div>
+              <div class="review__preview">
+                <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
+              </div>
             </div>
-            <div class="review__preview">
-              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
-            </div>
+            <div class="review__text">
+              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
+                и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
+              <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
+                с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
+            </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
           </div>
-          <div class="review__text">
-            <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
-              и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
-            <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
-              с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
-          </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
+          <div class="review__close js-review-close"></div>
         </div>
         <div class="review review--building-1 js-review-item">
-          <div class="review__info">
-            <div class="review__avatar" style="background-image: url('img/media/user-1.jpg');"></div>
-            <div class="review__name">Александр Зимородов</div>
-            <div class="review__age">29 лет</div>
-            <div class="review__city">г. Славянск-на-Кубани</div>
-            <div class="review__type">Покупка новостройки</div>
-            <div class="review__params">
-              <div class="review__param review__param--area">3 к. кв., 94,2 м<sup>2</sup>
+          <div class="review__content">
+            <div class="review__info">
+              <div class="review__avatar" style="background-image: url('img/media/user-1.jpg');"></div>
+              <div class="review__name">Александр Зимородов</div>
+              <div class="review__age">29 лет</div>
+              <div class="review__city">г. Славянск-на-Кубани</div>
+              <div class="review__type">Покупка новостройки</div>
+              <div class="review__params">
+                <div class="review__param review__param--area">3 к. кв., 94,2 м<sup>2</sup>
+                </div>
+                <div class="review__param review__param--cost">5 610 000 руб.</div>
+                <div class="review__param review__param--address">ул. Западный обход, 145
+                  <br>ЖК “Спортивная деревня”</div>
+                <div class="review__param review__param--company">Девелопмент-Юг</div>
               </div>
-              <div class="review__param review__param--cost">5 610 000 руб.</div>
-              <div class="review__param review__param--address">ул. Западный обход, 145
-                <br>ЖК “Спортивная деревня”</div>
-              <div class="review__param review__param--company">Девелопмент-Юг</div>
+              <div class="review__preview">
+                <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
+              </div>
             </div>
-            <div class="review__preview">
-              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
-            </div>
+            <div class="review__text">
+              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
+                и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
+              <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
+                с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
+            </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
           </div>
-          <div class="review__text">
-            <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
-              и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
-            <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
-              с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
-          </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
+          <div class="review__close js-review-close"></div>
         </div>
         <div class="review review--building-2 js-review-item">
-          <div class="review__info">
-            <div class="review__avatar" style="background-image: url('img/media/user-2.jpg');"></div>
-            <div class="review__name">Александр Зимородов</div>
-            <div class="review__age">35 лет</div>
-            <div class="review__city">г. Славянск-на-Кубани</div>
-            <div class="review__type">Покупка вторичного жилья</div>
-            <div class="review__params">
-              <div class="review__param review__param--area">3 к. кв., 89,6 м<sup>2</sup>
+          <div class="review__content">
+            <div class="review__info">
+              <div class="review__avatar" style="background-image: url('img/media/user-2.jpg');"></div>
+              <div class="review__name">Александр Зимородов</div>
+              <div class="review__age">35 лет</div>
+              <div class="review__city">г. Славянск-на-Кубани</div>
+              <div class="review__type">Покупка вторичного жилья</div>
+              <div class="review__params">
+                <div class="review__param review__param--area">3 к. кв., 89,6 м<sup>2</sup>
+                </div>
+                <div class="review__param review__param--cost">6 250 000 руб.</div>
+                <div class="review__param review__param--address">ул. Западный обход, 145
+                  <br>ЖК “Спортивная деревня”</div>
+                <div class="review__param review__param--company">AVA Group</div>
               </div>
-              <div class="review__param review__param--cost">6 250 000 руб.</div>
-              <div class="review__param review__param--address">ул. Западный обход, 145
-                <br>ЖК “Спортивная деревня”</div>
-              <div class="review__param review__param--company">AVA Group</div>
+              <div class="review__preview">
+                <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
+              </div>
             </div>
-            <div class="review__preview">
-              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
-            </div>
+            <div class="review__text">
+              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
+                и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
+              <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
+                с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
+            </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
           </div>
-          <div class="review__text">
-            <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
-              и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
-            <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
-              с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
-          </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
+          <div class="review__close js-review-close"></div>
         </div>
         <div class="review review--keys js-review-item">
-          <div class="review__info">
-            <div class="review__avatar" style="background-image: url('img/media/user-3.jpg');"></div>
-            <div class="review__name">Александра Зимородова</div>
-            <div class="review__age">27 лет</div>
-            <div class="review__city">г. Славянск-на-Кубани</div>
-            <div class="review__type">Продажа</div>
-            <div class="review__params">
-              <div class="review__param review__param--area">3 к. кв., 65,8 м<sup>2</sup>
+          <div class="review__content">
+            <div class="review__info">
+              <div class="review__avatar" style="background-image: url('img/media/user-3.jpg');"></div>
+              <div class="review__name">Александра Зимородова</div>
+              <div class="review__age">27 лет</div>
+              <div class="review__city">г. Славянск-на-Кубани</div>
+              <div class="review__type">Продажа</div>
+              <div class="review__params">
+                <div class="review__param review__param--area">3 к. кв., 65,8 м<sup>2</sup>
+                </div>
+                <div class="review__param review__param--cost">4 790 000 руб.</div>
+                <div class="review__param review__param--address">ул. Западный обход, 145
+                  <br>ЖК “Спортивная деревня”</div>
+                <div class="review__param review__param--company">Алмакс</div>
               </div>
-              <div class="review__param review__param--cost">4 790 000 руб.</div>
-              <div class="review__param review__param--address">ул. Западный обход, 145
-                <br>ЖК “Спортивная деревня”</div>
-              <div class="review__param review__param--company">Алмакс</div>
+              <div class="review__preview">
+                <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
+              </div>
             </div>
-            <div class="review__preview">
-              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
-            </div>
+            <div class="review__text">
+              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
+                и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
+              <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
+                с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
+            </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
           </div>
-          <div class="review__text">
-            <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
-              и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
-            <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
-              с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
-          </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
+          <div class="review__close js-review-close"></div>
         </div>
         <div class="review review--building-1 js-review-item">
-          <div class="review__info">
-            <div class="review__avatar" style="background-image: url('img/media/user-1.jpg');"></div>
-            <div class="review__name">Александр Зимородов</div>
-            <div class="review__age">29 лет</div>
-            <div class="review__city">г. Славянск-на-Кубани</div>
-            <div class="review__type">Покупка новостройки</div>
-            <div class="review__params">
-              <div class="review__param review__param--area">3 к. кв., 94,2 м<sup>2</sup>
+          <div class="review__content">
+            <div class="review__info">
+              <div class="review__avatar" style="background-image: url('img/media/user-1.jpg');"></div>
+              <div class="review__name">Александр Зимородов</div>
+              <div class="review__age">29 лет</div>
+              <div class="review__city">г. Славянск-на-Кубани</div>
+              <div class="review__type">Покупка новостройки</div>
+              <div class="review__params">
+                <div class="review__param review__param--area">3 к. кв., 94,2 м<sup>2</sup>
+                </div>
+                <div class="review__param review__param--cost">5 610 000 руб.</div>
+                <div class="review__param review__param--address">ул. Западный обход, 145
+                  <br>ЖК “Спортивная деревня”</div>
+                <div class="review__param review__param--company">Девелопмент-Юг</div>
               </div>
-              <div class="review__param review__param--cost">5 610 000 руб.</div>
-              <div class="review__param review__param--address">ул. Западный обход, 145
-                <br>ЖК “Спортивная деревня”</div>
-              <div class="review__param review__param--company">Девелопмент-Юг</div>
+              <div class="review__preview">
+                <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
+              </div>
             </div>
-            <div class="review__preview">
-              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
-            </div>
+            <div class="review__text">
+              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
+                и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
+              <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
+                с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
+            </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
           </div>
-          <div class="review__text">
-            <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
-              и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
-            <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
-              с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
-          </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
+          <div class="review__close js-review-close"></div>
         </div>
         <div class="review review--building-2 js-review-item">
-          <div class="review__info">
-            <div class="review__avatar" style="background-image: url('img/media/user-2.jpg');"></div>
-            <div class="review__name">Александр Зимородов</div>
-            <div class="review__age">35 лет</div>
-            <div class="review__city">г. Славянск-на-Кубани</div>
-            <div class="review__type">Покупка вторичного жилья</div>
-            <div class="review__params">
-              <div class="review__param review__param--area">3 к. кв., 89,6 м<sup>2</sup>
+          <div class="review__content">
+            <div class="review__info">
+              <div class="review__avatar" style="background-image: url('img/media/user-2.jpg');"></div>
+              <div class="review__name">Александр Зимородов</div>
+              <div class="review__age">35 лет</div>
+              <div class="review__city">г. Славянск-на-Кубани</div>
+              <div class="review__type">Покупка вторичного жилья</div>
+              <div class="review__params">
+                <div class="review__param review__param--area">3 к. кв., 89,6 м<sup>2</sup>
+                </div>
+                <div class="review__param review__param--cost">6 250 000 руб.</div>
+                <div class="review__param review__param--address">ул. Западный обход, 145
+                  <br>ЖК “Спортивная деревня”</div>
+                <div class="review__param review__param--company">AVA Group</div>
               </div>
-              <div class="review__param review__param--cost">6 250 000 руб.</div>
-              <div class="review__param review__param--address">ул. Западный обход, 145
-                <br>ЖК “Спортивная деревня”</div>
-              <div class="review__param review__param--company">AVA Group</div>
+              <div class="review__preview">
+                <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
+              </div>
             </div>
-            <div class="review__preview">
-              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
-            </div>
+            <div class="review__text">
+              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
+                и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
+              <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
+                с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
+            </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
           </div>
-          <div class="review__text">
-            <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
-              и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
-            <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
-              с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
-          </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
+          <div class="review__close js-review-close"></div>
         </div>
         <div class="review review--keys js-review-item">
-          <div class="review__info">
-            <div class="review__avatar" style="background-image: url('img/media/user-3.jpg');"></div>
-            <div class="review__name">Александра Зимородова</div>
-            <div class="review__age">27 лет</div>
-            <div class="review__city">г. Славянск-на-Кубани</div>
-            <div class="review__type">Продажа</div>
-            <div class="review__params">
-              <div class="review__param review__param--area">3 к. кв., 65,8 м<sup>2</sup>
+          <div class="review__content">
+            <div class="review__info">
+              <div class="review__avatar" style="background-image: url('img/media/user-3.jpg');"></div>
+              <div class="review__name">Александра Зимородова</div>
+              <div class="review__age">27 лет</div>
+              <div class="review__city">г. Славянск-на-Кубани</div>
+              <div class="review__type">Продажа</div>
+              <div class="review__params">
+                <div class="review__param review__param--area">3 к. кв., 65,8 м<sup>2</sup>
+                </div>
+                <div class="review__param review__param--cost">4 790 000 руб.</div>
+                <div class="review__param review__param--address">ул. Западный обход, 145
+                  <br>ЖК “Спортивная деревня”</div>
+                <div class="review__param review__param--company">Алмакс</div>
               </div>
-              <div class="review__param review__param--cost">4 790 000 руб.</div>
-              <div class="review__param review__param--address">ул. Западный обход, 145
-                <br>ЖК “Спортивная деревня”</div>
-              <div class="review__param review__param--company">Алмакс</div>
+              <div class="review__preview">
+                <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
+              </div>
             </div>
-            <div class="review__preview">
-              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу ре...</p>
-            </div>
+            <div class="review__text">
+              <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
+                и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
+              <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
+                с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
+            </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
           </div>
-          <div class="review__text">
-            <p>В марте 2017 года по рекомендации родственников я обратилась к сотруднику МГСН - отделение Тверское, Власову Николаю Сергеевичу по поводу решения жилищных вопросов. Были заключены договора с агентством, оговорены сроки исполнения. Все действия
-              и услуги, предусмотренные договорами и выполненные Власовым Н.С. заслуживают самой высокой положительной оценки.</p>
-            <p>Считаю необходимым отметить высокий профессионализм Власова Николая Сергеевича. Все выполнялось четко, корректно, без затрат лишнего времени, очень надёжно и пунктуально. Все вопросы Власовым Николаем урегулировались в строгом соответствии
-              с законом. Работа по договорам была выполнена в полном объёме и в срок. Выражаю огромную благодарность Власову Николаю Сергеевичу и рекомендую обращаться к нему своим близким и знакомым. Спасибо!</p>
-          </div><a class="review__link js-review-full">Смотреть отзыв полностью</a>
+          <div class="review__close js-review-close"></div>
         </div>
       </div>
     </div>
@@ -443,7 +474,7 @@
           <div class="footer-contacts__title">Контакты</div>
           <div class="footer-contacts__address">ул. Красных Партизан, 218</div><a class="footer-contacts__phone" href="tel:+79182920481">+7 (918) 292-04-81</a>
           <div class="footer-contacts__button-wrapper">
-            <button class="button">Заказать звонок</button>
+            <button class="button js-popup-open">Заказать звонок</button>
           </div>
         </div>
         <div class="footer__logo"></div>
@@ -458,7 +489,32 @@
       </div>
     </div>
   </footer>
-  <a class="floating-button"></a>
+  <a class="floating-button js-popup-open"></a>
+  <div class="popup js-popup">
+    <form class="form circle-form">
+      <div class="circle-form__content">
+        <div class="circle-form__title">Закажи <strong>БЕСПЛАТНУЮ</strong> консультацию!</div>
+        <div class="circle-form__input-group circle-form__input-group--user">
+          <input class="circle-form__input" type="text" name="name" placeholder="Ваше имя" />
+        </div>
+        <div class="circle-form__input-group circle-form__input-group--phone">
+          <input class="circle-form__input" type="text" name="tel" placeholder="Телефон" />
+        </div>
+        <div class="circle-form__button-wrapper">
+          <button class="button">Заказать</button>
+        </div><a class="circle-form__link" href="#">Политика конфиденциальности</a>
+        <div class="circle-form__success">
+          <div class="circle-form__success-title">Спасибо за заявку!</div>
+          <div class="circle-form__success-text">Наш менеджер свяжется с вами в ближайшее время для консультации</div>
+        </div>
+      </div>
+      <div class="circle-form__icon"></div>
+      <div class="circle-form__info"><span>Мы</span><span>не передаём</span><span>информацию</span>третьим лицам
+        <br>без вашего
+        <br>согласия</div>
+      <div class="circle-form__close js-popup-close"></div>
+    </form>
+  </div>
   <script src="js/app.js"></script>
 </body>
 
