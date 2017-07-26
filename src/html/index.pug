@@ -59,6 +59,6 @@ block content
       .section__content
         .partners
           .partners__items.owl-carousel.js-slider-partners
-            each partner in [...partners, ...partners]
+            each partner in partners
               .partners__item
-                img(src=`img/media/${partner}`, alt='')
+                img(src=`img/media/partners/${partner}`, alt='')
