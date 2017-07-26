@@ -1130,7 +1130,6 @@ body {
 
   &__items {
     display: flex;
-    margin: 0 0 50px;
     margin-bottom: 50px;
     padding: 14px 0;
     justify-content: space-around;
@@ -1141,7 +1140,13 @@ body {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 72px;
+    width: 100%;
+
+    img {
+      width: auto !important;
+    }
   }
 
   .owl-prev,

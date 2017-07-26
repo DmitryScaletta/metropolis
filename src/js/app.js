@@ -109,28 +109,20 @@ $('.js-slider-reviews').owlCarousel({
 // partners sider
 $('.js-slider-partners').owlCarousel({
   // loop: true,
-  autoWidth: true,
   nav: true,
   navText: ['', ''],
   responsive: {
     0: {
       items: 1,
-      margin: 15,
-    },
-    576: {
-      margin: 10,
     },
     768: {
       items: 2,
-      margin: 100,
     },
     992: {
       items: 3,
-      margin: 100,
     },
     1200: {
       items: 4,
-      margin: 80,
     },
   },
 });
