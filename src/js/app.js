@@ -29,6 +29,7 @@ import 'owl.carousel';
 
       const image = document.createElement('img');
       image.src = `https://img.youtube.com/vi/${dataEmbed}/sddefault.jpg`;
+      image.alt = '';
       image.width = '0'; // ie10 fix
       image.addEventListener('load', () => youtube.appendChild(image));
 
