@@ -639,36 +639,20 @@ body {
 
 .responsive-video {
   position: relative;
-  display: inline-block;
-  width: 100%;
+  margin: 0 auto;
   max-width: 854px;
   overflow: hidden;
-  background: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #fff;
+  cursor: pointer;
   box-shadow: $box-shadow;
 
   &::after {
     content: '';
     display: block;
     padding-top: percentage(9 / 16);
-  }
-
-  img {
-    position: absolute;
-    top: -16.82%;
-    left: 0;
-    width: 100%;
-    max-width: none;
-    max-height: none;
-    cursor: pointer;
-  }
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
   }
 
   &__button {
@@ -695,6 +679,15 @@ body {
       border-width: 22.5px 0 22.5px 45px;
       border-color: transparent transparent transparent #fff;
     }
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 }
 
