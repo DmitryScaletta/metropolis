@@ -1,8 +1,11 @@
 extends layout/main.pug
 
+block vars
+  - var { pageTitle, headerTitle, headerImage } = pages.main;
+
 block content
 
-  section.section
+  section.section.section--half-gray
     .section__inner
       h2.section__title О ваших выгодах за 60 секунд
       .section__content.center
@@ -21,11 +24,11 @@ block content
               .service__desc!= service.desc
               a(href='#').button.service__button Подробнее
 
-  section.section.section--features
+  section.section.section--in-numbers
     .section__inner
       h2.section__title Метрополис в цифрах
       .section__content.features
-        each feature in features
+        each feature in features.inNumbers
           .features__item
             .features__value= feature.value
             .features__title= feature.title

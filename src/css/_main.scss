@@ -1,39 +1,7 @@
-body {
-  &::before {
-    content: '';
-    display: none;
-    position: absolute;
-    z-index: -2;
-    top: 520px;
-    left: 0;
-    right: 0;
-    height: 121px;
-    background: url('../img/houses.svg') repeat-x;
-
-    @media (min-width: $screen-lg) {
-      display: block;
-    }
-  }
-
-  &::after {
-    content: '';
-    display: none;
-    position: absolute;
-    z-index: -2;
-    top: 520px + 121px;
-    left: 0;
-    right: 0;
-    height: 550px;
-    background: #f5f5f5;
-
-    @media (min-width: $screen-lg) {
-      display: block;
-    }
-  }
-}
-
 .header {
-  margin-bottom: -37px;
+  $header-margin-bottom: 40px;
+
+  margin-bottom: 0 - $header-margin-bottom;
   position: relative;
   overflow: hidden;
 
@@ -49,23 +17,24 @@ body {
     content: '';
     position: absolute;
     z-index: -1;
-    bottom: 37px;
+    bottom: $header-margin-bottom;
     left: 50%;
     transform: translate(-50%, 0);
     width: 1000px;
-    height: ceil(1000px * 0.7324);
+    height: ceil(1000px * 0.75);
     border-radius: 50%;
     opacity: 0.4;
-    background: url('../img/header-bg.jpg') bottom center no-repeat;
+    background-position: bottom center;
+    background-repeat: no-repeat;
 
     @media (min-width: $screen-sm) {
       width: 1500px;
-      height: ceil(1500px * 0.7324);
+      height: ceil(1500px * 0.75);
     }
 
     @media (min-width: $screen-md) {
       width: 2000px;
-      height: ceil(2000px * 0.7324);
+      height: ceil(2000px * 0.75);
     }
 
     @media (min-width: $screen-lg) {
@@ -74,13 +43,63 @@ body {
 
     @media (min-width: $screen-xl) {
       width: 2370px;
-      height: ceil(2370px * 0.7324);
+      height: ceil(2370px * 0.75);
     }
+  }
+
+  &--main::after {
+    background-image: url('../img/header-bg-main.jpg');
+  }
+
+  &--new-buildings::after {
+    background-image: url('../img/header-bg-new-buildings.jpg');
+  }
+
+  &--old-buildings::after {
+    background-image: url('../img/header-bg-old-buildings.jpg');
+  }
+
+  &--sale::after {
+    background-image: url('../img/header-bg-sale.jpg');
   }
 
   &__inner {
     @extend %container;
+
+    &::before {
+      content: '';
+      display: none;
+      position: absolute;
+      z-index: -2;
+      left: 0;
+      right: 0;
+      bottom: $header-margin-bottom + 94px;
+      height: 121px;
+      background: url('../img/houses.svg') repeat-x;
+
+      @media (min-width: $screen-lg) {
+        display: block;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      z-index: -2;
+      left: 0;
+      right: 0;
+      bottom: $header-margin-bottom;
+      height: 94px;
+      background: $color-bg-soft;
+
+      @media (min-width: $screen-lg) {
+        display: block;
+      }
+    }
   }
+
+  // &__content {}
 
   &__top {
     display: flex;
