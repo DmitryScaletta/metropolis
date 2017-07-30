@@ -629,10 +629,44 @@
   padding: 15px 0;
   overflow: hidden;
 
-  &--features {
+  &--gray {
+    background: $color-bg-soft;
+  }
+
+  &--half-gray::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 465px;
+    background: $color-bg-soft;
+  }
+
+  &--in-numbers,
+  &--guarantees {
     padding: 15px 0 30px;
-    background: url('../img/features-bg.jpg') center;
-    background-size: cover;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &--in-numbers::after {
+    opacity: 0.3;
+    background-image: url('../img/section-in-numbers-bg.jpg');
+  }
+
+  &--guarantees::after {
+    opacity: 0.1;
+    background-image: url('../img/section-guarantees-bg.jpg');
   }
 
   &__inner {
