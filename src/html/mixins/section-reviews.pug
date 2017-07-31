@@ -1,0 +1,32 @@
+mixin section-reviews(items = reviews)
+  section.section
+    .section__inner
+      h2.section__title Отзывы
+      .section__content.reviews.owl-carousel.js-slider-reviews
+        each review in items
+          -
+            var type = '';
+            switch (review.type) {
+              case 'new-building': type = 'Покупка новостройки';      break;
+              case 'old-building': type = 'Покупка вторичного жилья'; break;
+              case 'sale':         type = 'Продажа';                  break;
+            }
+          .review(class=`review--${review.type}`).js-review-item
+            .review__content
+              .review__info
+                .review__avatar(style=`background-image: url('img/media/avatars/${review.avatar}')`)
+                .review__name= review.name
+                .review__age= review.age
+                .review__city= review.city
+                .review__type= type
+                .review__params
+                  each param in Object.keys(review.params)
+                    .review__param(class=`review__param--${param}`)!= review.params[param]
+                .review__preview
+                  p= `${review.text[0].slice(0, 200)}...`
+              .review__text
+                each p in review.text
+                  p= p
+              a.review__link.js-review-full Смотреть отзыв полностью
+            .review__close.js-review-close
+    .review-popup.js-review-popup

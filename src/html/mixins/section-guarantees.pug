@@ -1,0 +1,7 @@
+mixin section-guarantees(items)
+  section.section.section--guarantees
+    .section__inner
+      h2.section__title Наши гарантии
+      .section__content.guarantees
+        each item in items
+          .guarantees__item= item

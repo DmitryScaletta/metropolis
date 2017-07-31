@@ -1,0 +1,8 @@
+section.section.section--in-numbers
+    .section__inner
+      h2.section__title Метрополис в цифрах
+      .section__content.in-numbers
+        each item in inNumbers
+          .in-numbers__item
+            .in-numbers__value= item.value
+            .in-numbers__title= item.title

@@ -1,0 +1,9 @@
+section.section
+  .section__inner
+    h2.section__title Наши партнёры
+    .section__content
+      .partners
+        .partners__items.owl-carousel.js-slider-partners
+          each partner in partners
+            .partners__item
+              img(src=`img/media/partners/${partner}`, alt='')

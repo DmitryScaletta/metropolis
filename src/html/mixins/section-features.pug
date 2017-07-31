@@ -1,0 +1,15 @@
+mixin section-features(items = [])
+  - var n = (items.length % 3 === 0) ? 3 : 4;
+  section.section.section--gray
+    .section__inner
+      h2.section__title Почему выбирают нас?
+      .section__content.features(class=`features--${n}n`)
+        each item in items
+          .features__item
+            -
+              var classNames = [
+                `features__icon--color-${item.color}`,
+                `features__icon--icon-${item.icon}`,
+              ];
+            .features__icon(class=classNames.join(' '))
+            .features__text= item.text
