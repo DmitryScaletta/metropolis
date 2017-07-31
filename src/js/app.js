@@ -199,7 +199,7 @@ $('.js-slider-partners').owlCarousel({
   const togglePopup = () => {
     popup.classList.toggle(classNameActive);
     document.body.classList.toggle('popup-open');
-  }
+  };
 
   popup.addEventListener('click', (e) => {
     if (e.target === popup) togglePopup();
