@@ -274,6 +274,7 @@
     font-weight: bold;
     text-transform: uppercase;
     font-size: 18px;
+    text-align: left;
 
     @media (min-width: $screen-sm) {
       font-size: rem(24px);
@@ -283,6 +284,7 @@
   &__subtitle {
     margin-top: 20px;
     line-height: 1.66;
+    text-align: left;
   }
 
   &__button {
