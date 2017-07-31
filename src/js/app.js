@@ -1,4 +1,5 @@
 import Tooltip from 'tooltip.js';
+import MoveTo from 'moveto';
 import $ from 'jquery';
 import 'owl.carousel';
 
@@ -136,6 +137,16 @@ $('.js-slider-partners').owlCarousel({
     },
   },
 });
+
+
+// moveTo
+(() => {
+  const moveTo = new MoveTo();
+  Array.prototype.forEach.call(
+    document.querySelectorAll('.js-move-to'),
+    elem => moveTo.registerTrigger(elem),
+  );
+})();
 
 
 // form validation

@@ -11,7 +11,8 @@ header.header(class=`header--${headerImage}`)
           ul.header-nav__list
             each item in menu
               li.header-nav__item(class=(pageTitle === item.text) ? 'active' : '')
-                a(href=item.link).header-nav__link= item.text
+                - var className = (item.link[0] === '#') ? 'js-move-to' : '';
+                a(href=item.link, class=className).header-nav__link= item.text
       .header__overlay.js-menu-overlay
       .header__mobile
         button.button.button--secondary.header__toggler.js-menu-toggle Меню
