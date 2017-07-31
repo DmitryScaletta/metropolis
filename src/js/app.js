@@ -52,46 +52,49 @@ import 'owl.carousel';
 
 // review popups
 (() => {
-  const reviewPopup = document.querySelector('.js-review-popup');
-  if (reviewPopup === null) return;
+  const cardPopup      = document.querySelector('.js-card-popup');
+  const cardsContainer = document.querySelector('.js-slider-cards');
+  if (cardPopup === null || cardsContainer === null) return;
 
-  const reviews = Array.prototype.slice.call(
-    document.getElementsByClassName('js-review-item'),
+  const cardPopupContent = cardPopup.querySelector('.js-card-popup-content');
+  if (cardPopupContent === null) return;
+
+  const cards = Array.prototype.slice.call(
+    cardsContainer.getElementsByClassName('js-card-item'),
   );
-  if (reviews.length === 0) return;
+  if (cards.length === 0) return;
 
-  const togglePopup = () => reviewPopup.classList.toggle('active');
+  const togglePopup = () => cardPopup.classList.toggle('active');
 
   const removeAllChildNodes = (elem) => {
     while (elem.hasChildNodes()) elem.removeChild(elem.firstChild);
   };
 
-  reviewPopup.addEventListener('click', (e) => {
-    if (e.target === reviewPopup) togglePopup();
+  cardPopup.addEventListener('click', (e) => {
+    if (e.target === cardPopup) togglePopup();
   });
 
-  const showReviewPopup = (review) => {
-    removeAllChildNodes(reviewPopup);
-    reviewPopup.appendChild(review.cloneNode(true));
+  const cardPopupClose = cardPopup.querySelector('.js-card-popup-close');
+  if (cardPopupClose !== null) {
+    cardPopupClose.addEventListener('click', togglePopup);
+  }
 
-    const reviewPopupClose = reviewPopup.querySelector('.js-review-close');
-    if (reviewPopupClose !== null) {
-      reviewPopupClose.addEventListener('click', togglePopup);
-    }
-
+  const showCardPopup = (card) => {
+    removeAllChildNodes(cardPopupContent);
+    cardPopupContent.appendChild(card.cloneNode(true));
     togglePopup();
   };
 
-  reviews.forEach((review) => {
-    const button = review.querySelector('.js-review-full');
+  cards.forEach((card) => {
+    const button = card.querySelector('.js-card-popup-open');
     if (button === null) return;
-    button.addEventListener('click', () => showReviewPopup(review));
+    button.addEventListener('click', () => showCardPopup(card));
   });
 })();
 
 
 // reviews slider
-$('.js-slider-reviews').owlCarousel({
+$('.js-slider-cards').owlCarousel({
   // loop: true,
   margin: 15,
   nav: true,

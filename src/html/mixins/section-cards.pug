@@ -5,7 +5,7 @@ mixin card-params(params)
       li.card__param(class=`card__param--icon-${param.icon}`)!= param.text
 
 mixin card(card)
-  .card.card--house(class=`card--${card.type}`).js-card-item
+  .card.card--house(class=`card--${card.type}`)
     .card__image(style=`background-image: url('img/media/${card.image}')`)
     .card__inner
       .card__header
@@ -36,7 +36,7 @@ mixin card-review(review)
       .card__full-text
         each p in review.text
           p= p
-      a(href='#').card__link Смотреть отзыв полностью
+      a.card__link.js-card-popup-open Смотреть отзыв полностью
 
 mixin section-cards(items = reviews, type = 'reviews', title = 'Отзывы')
   section.section
@@ -51,4 +51,5 @@ mixin section-cards(items = reviews, type = 'reviews', title = 'Отзывы')
             +card(card)
     if type === 'reviews'
       .card-popup.js-card-popup
-        //- +card-review(reviews[0])
+        .card-popup__item.js-card-popup-content
+        .card-popup__close.js-card-popup-close
