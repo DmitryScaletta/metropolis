@@ -18,6 +18,17 @@ import 'owl.carousel';
   const toggleMenu = () => navbarContainer.classList.toggle(classNameActive);
 
   [menuToggle, menuOverlay].forEach(elem => elem.addEventListener('click', toggleMenu));
+
+
+  // moveto fix
+  const handleClick = () => {
+    if (navbarContainer.classList.contains(classNameActive)) toggleMenu();
+  };
+
+  Array.prototype.forEach.call(
+    navbarContainer.getElementsByClassName('js-move-to'),
+    elem => elem.addEventListener('click', handleClick),
+  );
 })();
 
 
