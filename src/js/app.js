@@ -64,7 +64,10 @@ import 'owl.carousel';
   );
   if (cards.length === 0) return;
 
-  const togglePopup = () => cardPopup.classList.toggle('active');
+  const togglePopup = () => {
+    cardPopup.classList.toggle('active');
+    document.body.classList.toggle('popup-open');
+  };
 
   const removeAllChildNodes = (elem) => {
     while (elem.hasChildNodes()) elem.removeChild(elem.firstChild);
@@ -193,7 +196,10 @@ $('.js-slider-partners').owlCarousel({
 
   const classNameActive = 'active';
 
-  const togglePopup = () => popup.classList.toggle(classNameActive);
+  const togglePopup = () => {
+    popup.classList.toggle(classNameActive);
+    document.body.classList.toggle('popup-open');
+  }
 
   popup.addEventListener('click', (e) => {
     if (e.target === popup) togglePopup();
