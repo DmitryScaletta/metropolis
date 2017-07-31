@@ -1,0 +1,27 @@
+extends layout/main.pug
+
+block vars
+  - var { pageTitle, headerTitle, headerImage } = pages.newBuildings;
+
+block content
+
+  +section-features(features.newBuildings)
+
+  +section-guarantees(guarantees.newBuildings)
+
+  section.section
+    .section__inner
+      h2.section__title Более 200 новостроек в Краснодаре
+      .section__content(style='min-height: 500px')
+
+  section.section.section--gray
+    .section__inner
+      h2.section__title Подборать квартиру в новостройке
+      .section__content(style='min-height: 500px')
+        p Вы можете заполнить заявку на бесплатный подбор квартиры или в один клик и наш менеджер свяжется с вами
+
+  include includes/section-in-numbers.pug
+
+  +section-reviews(reviews.filter(item => item.type === 'new-building'))
+
+  include includes/section-partners.pug

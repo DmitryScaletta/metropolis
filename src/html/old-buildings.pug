@@ -1,0 +1,16 @@
+extends layout/main.pug
+
+block vars
+  - var { pageTitle, headerTitle, headerImage } = pages.oldBuildings;
+
+block content
+
+  +section-features(features.oldBuildings)
+
+  +section-guarantees(guarantees.oldBuildings)
+
+  include includes/section-in-numbers.pug
+
+  +section-reviews(reviews.filter(item => item.type === 'old-building'))
+
+  include includes/section-partners.pug
