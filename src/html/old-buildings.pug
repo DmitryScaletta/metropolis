@@ -9,8 +9,10 @@ block content
 
   +section-guarantees(guarantees.oldBuildings)
 
+  +section-cards(cards.filter(card => card.type === 'old-building'), 'houses', 'Более 36 000 объектов в Краснодаре')
+
   include includes/section-in-numbers.pug
 
-  +section-reviews(reviews.filter(item => item.type === 'old-building'))
+  +section-cards(reviews.filter(item => item.type === 'old-building'))
 
   include includes/section-partners.pug

@@ -1,0 +1,54 @@
+mixin card-params(params)
+  ul.card__params
+    each param in params
+      - param.icon = param.icon ? param.icon : 'location';
+      li.card__param(class=`card__param--icon-${param.icon}`)!= param.text
+
+mixin card(card)
+  .card.card--house(class=`card--${card.type}`).js-card-item
+    .card__image(style=`background-image: url('img/media/${card.image}')`)
+    .card__inner
+      .card__header
+        each params in card.headParams
+          +card-params(params)
+      .card__text
+        +card-params(card.params)
+
+mixin card-review(review)
+  -
+    var type = '';
+    switch (review.type) {
+      case 'new-building': type = 'Покупка новостройки';      break;
+      case 'old-building': type = 'Покупка вторичного жилья'; break;
+      case 'sale':         type = 'Продажа';                  break;
+    }
+  .card.card--review(class=`card--${review.type}`).js-card-item
+    .card__inner
+      .card__content
+        .card__header
+          .card__avatar(style=`background-image: url('img/media/avatars/${review.avatar}')`)
+          .card__name= review.name
+          .card__age= review.age
+          .card__city= review.city
+        .card__text
+          .card__type= type
+          +card-params(review.params)
+      .card__full-text
+        each p in review.text
+          p= p
+      a(href='#').card__link Смотреть отзыв полностью
+
+mixin section-cards(items = reviews, type = 'reviews', title = 'Отзывы')
+  section.section
+    .section__inner
+      h2.section__title= title
+      .section__content.cards.owl-carousel.js-slider-cards
+        if type === 'reviews'
+          each review in items
+            +card-review(review)
+        else if type === 'houses'
+          each card in items
+            +card(card)
+    if type === 'reviews'
+      .card-popup.js-card-popup
+        //- +card-review(reviews[0])

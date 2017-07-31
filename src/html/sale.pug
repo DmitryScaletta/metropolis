@@ -9,8 +9,10 @@ block content
 
   +section-guarantees(guarantees.sale)
 
+  +section-cards(cards.filter(card => card.type === 'sale'), 'houses', 'Последние проданные объекты')
+
   include includes/section-in-numbers.pug
 
-  +section-reviews(reviews.filter(item => item.type === 'sale'))
+  +section-cards(reviews.filter(item => item.type === 'sale'))
 
   include includes/section-partners.pug

@@ -9,19 +9,15 @@ block content
 
   +section-guarantees(guarantees.newBuildings)
 
-  section.section
-    .section__inner
-      h2.section__title Более 200 новостроек в Краснодаре
-      .section__content(style='min-height: 500px')
+  +section-cards(cards.filter(card => card.type === 'new-building'), 'houses', 'Более 200 новостроек в Краснодаре')
 
   section.section.section--gray
     .section__inner
       h2.section__title Подборать квартиру в новостройке
       .section__content(style='min-height: 500px')
-        p Вы можете заполнить заявку на бесплатный подбор квартиры или в один клик и наш менеджер свяжется с вами
 
   include includes/section-in-numbers.pug
 
-  +section-reviews(reviews.filter(item => item.type === 'new-building'))
+  +section-cards(reviews.filter(item => item.type === 'new-building'))
 
   include includes/section-partners.pug

@@ -854,6 +854,10 @@
     font-size: 14px;
     flex-grow: 1;
   }
+
+  &__button {
+    margin-top: 20px;
+  }
 }
 
 .in-numbers {
@@ -943,7 +947,6 @@
     height: 150px;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
     font-size: 18px;
     text-transform: uppercase;
@@ -1114,7 +1117,9 @@
   }
 }
 
-.reviews {
+.cards {
+  margin-bottom: 50px;
+
   .owl-prev,
   .owl-next {
     position: absolute;
@@ -1145,7 +1150,8 @@
 
   .owl-dots {
     display: flex;
-    margin: 30px 0 15px;
+    position: absolute;
+    margin-top: 30px;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -1170,9 +1176,28 @@
   }
 }
 
-.review {
-  display: inline-block;
+.card {
   position: relative;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  max-width: 370px;
+  border-radius: 2px;
+  border-top-right-radius: 45px;
+  border: 1px solid $color-bg-light;
+  background: #fff;
+  overflow: hidden;
+
+  @media (min-width: $screen-sm) {
+    padding-bottom: 40px;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding-bottom: 20px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-bottom: 40px;
+  }
 
   &::after {
     @extend .icon;
@@ -1191,65 +1216,120 @@
   }
 
   &--new-building {
-    &::after {
-      content: $icon-new-building;
-      color: $color-secondary;
+    &.card--review {
+      &::after {
+        content: $icon-new-building;
+        color: $color-secondary;
+      }
+
+      .card__type {
+        color: $color-secondary;
+      }
     }
 
-    .review__type {
-      color: $color-secondary;
+    &.card--house {
+      .card__header {
+        color: $color-secondary;
+      }
     }
   }
 
   &--old-building {
-    &::after {
-      content: $icon-old-building;
-      color: $color-thirdly;
+    &.card--review {
+      &::after {
+        content: $icon-old-building;
+        color: $color-thirdly;
+      }
+
+      .card__type {
+        color: $color-thirdly;
+      }
     }
 
-    .review__type {
-      color: $color-thirdly;
+    &.card--house {
+      .card__header {
+        color: $color-thirdly;
+      }
     }
   }
 
   &--sale {
-    &::after {
-      content: $icon-keys;
-      color: $color-fourthly;
+    &.card--review {
+      &::after {
+        content: $icon-keys;
+        color: $color-fourthly;
+      }
+
+      .card__type {
+        color: $color-fourthly;
+      }
     }
 
-    .review__type {
-      color: $color-fourthly;
+    &.card--house {
+      .card__header {
+        color: $color-fourthly;
+      }
     }
   }
 
-  &__content {
-    min-height: 500px;
-    padding: 20px;
-    border-radius: 2px;
-    border-top-right-radius: 45px;
-    border: 1px solid $color-bg-light;
-    background: #fff;
+  &--house {
+    .card__header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: bold;
+
+      .card__param {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &--review {
+    .card__param {
+      &:nth-child(3),
+      &:nth-child(4) {
+        display: none;
+      }
+    }
+  }
+
+  &__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::after {
+      content: '';
+      display: block;
+      padding-top: percentage(300 / 370);
+    }
+  }
+
+  &__inner {
+    padding: 15px 20px 0;
 
     @media (min-width: $screen-sm) {
-      padding: 45px 38px;
-      min-height: 600px;
+      padding: 25px 38px 0;
     }
 
     @media (min-width: $screen-lg) {
-      padding: 20px;
-      min-height: 500px;
+      padding: 15px 20px 0;
     }
 
     @media (min-width: $screen-xl) {
-      padding: 45px 38px;
-      min-height: 600px;
+      padding: 25px 38px 0;
     }
   }
 
-  // &__info {}
+  // &__content {}
+
+  &__header {
+    padding-bottom: 15px;
+  }
 
   &__avatar {
+    margin-top: 20px;
     height: 80px;
     width: 80px;
     border-radius: 50%;
@@ -1257,26 +1337,88 @@
   }
 
   &__name {
-    margin-top: 25px;
+    margin-top: 20px;
+    margin-bottom: 2px;
     font-weight: bold;
   }
 
-  &__age {
-    margin: 5px 0;
-    font-size: 14px;
-  }
-
+  &__age,
   &__city {
-    margin: 10px 0 20px;
+    margin-bottom: 8px;
     font-size: 14px;
   }
 
-  &__type {
-    padding-top: 15px;
-    margin: 15px 0;
+  &__params {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__param {
     position: relative;
-    font-size: 14px;
-    font-weight: bold;
+    padding-left: 30px;
+    margin-bottom: 6px;
+
+    &::before {
+      @extend .icon;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 14px;
+      line-height: rem(16px) * 1.5;
+    }
+
+    &--icon {
+      &-house::before {
+        content: $icon-house;
+      }
+
+      &-wallet::before {
+        content: $icon-wallet;
+      }
+
+      &-location::before {
+        content: $icon-location;
+      }
+
+      &-vcard::before {
+        content: $icon-vcard;
+      }
+
+      &-calendar::before {
+        content: $icon-calendar;
+      }
+
+      &-layers::before {
+        content: $icon-layers;
+      }
+
+      &-tools::before {
+        content: $icon-tools;
+      }
+
+      &-star::before {
+        content: $icon-star;
+      }
+
+      &-popup::before {
+        content: $icon-popup;
+      }
+
+      &-square::before {
+        content: $icon-square;
+      }
+
+      &-check::before {
+        content: $icon-check;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    padding-top: 15px;
 
     &::before {
       content: '';
@@ -1290,64 +1432,43 @@
     }
   }
 
-  // &__params {}
+  &__type {
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 14px;
+  }
 
-  &__param {
-    position: relative;
-    margin-bottom: 5px;
-    padding-left: 30px;
-
-    &::before {
-      @extend .icon;
-
-      content: '';
-      position: absolute;
-      display: block;
-      left: 0;
-      top: 0;
-      height: 1rem;
-      line-height: inherit;
-      color: $color-text-softer;
-    }
-
-    &--area::before {
-      font-size: rem(18px);
-      content: $icon-home;
-    }
-
-    &--cost::before {
-      content: $icon-wallet;
-    }
-
-    &--address::before {
-      content: $icon-location;
-    }
-
-    &--company::before {
-      content: $icon-vcard;
-    }
-
-    &:nth-child(3),
-    &:nth-child(4) {
+  &__full-text {
+    p {
       display: none;
+
+      &:first-child {
+        display: block;
+        position: relative;
+        height: calc(1.5rem * 5);
+        overflow: hidden;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 3rem;
+          background: linear-gradient(to top, #fff, transparent);
+        }
+      }
     }
-  }
-
-  &__preview {
-    overflow: hidden;
-  }
-
-  &__text {
-    display: none;
   }
 
   &__link {
     display: inline-block;
-    padding: 15px 0;
+    padding: 12px 0;
     font-size: 14px;
     cursor: pointer;
   }
 
+  /*
   &__close {
     @extend %close-popup-button;
 
@@ -1357,9 +1478,10 @@
     top: -45px;
     left: 50%;
   }
+  */
 }
 
-.review-popup {
+.card-popup {
   display: none;
   position: fixed;
   z-index: 5;
@@ -1367,21 +1489,21 @@
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: rgba(#000, 0.6);
 
   &.active {
     display: block;
   }
 
-  .review {
+  .card {
     @extend %container;
 
     position: absolute;
     margin: 50px 0 15px;
     top: 0;
     left: 50%;
-    min-height: 525px;
     transform: translate(-50%, 0);
 
     // @media (min-width: $screen-md) {}
@@ -1390,17 +1512,17 @@
       margin-top: 100px;
     }
 
-    &__content {
+    &__inner {
       display: flex;
       flex-direction: column;
 
       @media (min-width: $screen-lg) {
-        padding: 45px 38px;
+        // padding: 45px 38px;
         flex-direction: row;
       }
     }
 
-    &__info {
+    &__content {
       flex-grow: 1;
 
       @media (min-width: $screen-lg) {
@@ -1415,11 +1537,7 @@
       }
     }
 
-    &__preview {
-      display: none;
-    }
-
-    &__text {
+    &__full-text {
       display: block;
 
       @media (min-width: $screen-lg) {
@@ -1431,6 +1549,15 @@
 
       @media (min-width: $screen-xl) {
         padding-right: 100px;
+      }
+
+      p {
+        display: block;
+        height: auto;
+
+        &::after {
+          display: none;
+        }
       }
     }
 
@@ -1643,7 +1770,7 @@
   bottom: 25px;
   width: 70px;
   height: 70px;
-  font-size: rem(48px);
+  font-size: rem(34px);
   color: $color-text-light;
   background: $color-secondary;
   border-radius: 50%;
