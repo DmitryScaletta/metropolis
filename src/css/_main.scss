@@ -1281,6 +1281,10 @@
 
       .card__param {
         margin-bottom: 10px;
+
+        &::before {
+          color: inherit;
+        }
       }
     }
   }
@@ -1367,6 +1371,7 @@
       top: 0;
       font-size: 14px;
       line-height: rem(16px) * 1.5;
+      color: $color-text-softer;
     }
 
     &--icon {
