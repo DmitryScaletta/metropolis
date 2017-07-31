@@ -53,14 +53,15 @@ import 'owl.carousel';
 
 // review popups
 (() => {
-  const cardsContainer = document.querySelector('.js-slider-cards');
-  if (cardPopup === null || cardsContainer === null) return;
+  const cardPopup = document.querySelector('.js-card-popup');
+  const cardsList = document.querySelector('.js-card-popup-list');
+  if (cardPopup === null || cardsList === null) return;
 
   const cardPopupContent = cardPopup.querySelector('.js-card-popup-content');
   if (cardPopupContent === null) return;
 
   const cards = Array.prototype.slice.call(
-    cardsContainer.getElementsByClassName('js-card-item'),
+    cardsList.getElementsByClassName('js-card-item'),
   );
   if (cards.length === 0) return;
 
