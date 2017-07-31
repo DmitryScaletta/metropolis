@@ -123,6 +123,7 @@
       position: absolute;
       left: 0;
       top: 0;
+      font-size: rem(18px);
       line-height: inherit;
       color: $color-primary;
     }
@@ -434,6 +435,7 @@
         left: 0;
         top: 0;
         bottom: 0;
+        font-size: rem(20px);
         width: 17px;
         color: #868383;
       }
@@ -442,14 +444,12 @@
     &--user {
       &::after {
         content: $icon-user;
-        font-size: rem(20px);
       }
     }
 
     &--phone {
       &::after {
         content: $icon-mobile;
-        font-size: rem(27px);
       }
     }
   }
@@ -458,7 +458,7 @@
     @extend %transition;
 
     display: block;
-    margin-left: 30px;
+    margin-left: 32px;
     padding: 10px 15px;
     width: 240px;
     font-size: inherit;
@@ -1034,7 +1034,7 @@
 
     &::after {
       content: $icon-keys;
-      font-size: rem(36px);
+      font-size: rem(40px);
       color: $color-text-light;
     }
 
@@ -1058,43 +1058,43 @@
 
     &--icon {
       &-documents::after {
-        // content: $icon-documents;
+        content: $icon-documents;
       }
 
       &-m::after {
-        // content: $icon-m;
+        content: $icon-m;
       }
 
       &-percent::after {
-        // content: $icon-percent;
+        content: $icon-percent;
       }
 
       &-scales::after {
-        // content: $icon-scales;
+        content: $icon-scales;
       }
 
       &-plus-minus::after {
-        // content: $icon-minus;
+        content: $icon-plus-minus;
       }
 
       &-car::after {
-        // content: $icon-car;
+        content: $icon-car;
       }
 
       &-money::after {
-        // content: $icon-money;
+        content: $icon-money;
       }
 
       &-camera::after {
-        // content: $icon-camera;
+        content: $icon-camera;
       }
 
       &-megaphone::after {
-        // content: $icon-megaphone;
+        content: $icon-megaphone;
       }
 
       &-furniture::after {
-        // content: $icon-furniture;
+        content: $icon-furniture;
       }
     }
 
