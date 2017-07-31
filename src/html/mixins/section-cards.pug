@@ -42,7 +42,8 @@ mixin section-cards(items = reviews, type = 'reviews', title = 'Отзывы')
   section.section
     .section__inner
       h2.section__title= title
-      .section__content.cards.owl-carousel.js-slider-cards
+      - var className = (type === 'reviews') ? 'js-card-popup-list' : '';
+      .section__content.cards.owl-carousel.js-slider-cards(class=className)
         if type === 'reviews'
           each review in items
             +card-review(review)

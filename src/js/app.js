@@ -52,7 +52,6 @@ import 'owl.carousel';
 
 // review popups
 (() => {
-  const cardPopup      = document.querySelector('.js-card-popup');
   const cardsContainer = document.querySelector('.js-slider-cards');
   if (cardPopup === null || cardsContainer === null) return;
 
