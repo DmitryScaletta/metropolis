@@ -55,7 +55,7 @@
           <button class="button header__button js-popup-open">Заказать консультацию</button>
         </div>
         <div class="header__form">
-          <form class="circle-form js-form">
+          <form class="circle-form js-circle-form">
             <div class="circle-form__content">
               <div class="circle-form__title">Закажи <strong>БЕСПЛАТНУЮ</strong> консультацию!</div>
               <div class="circle-form__input-group circle-form__input-group--user">
@@ -160,7 +160,8 @@
               </ul>
             </div>
           </div>
-          <div class="card__badge">СРОЧНАЯ ПРОДАЖА</div>
+          <div class="card__badge"><strong>СРОЧНАЯ ПРОДАЖА</strong>
+          </div>
         </div>
         <div class="card card--house card--old-building">
           <div class="card__image" style="background-image: url('img/media/old-building-3.jpg');"></div>
@@ -190,7 +191,7 @@
       <h2 class="section__title">Подборать квартиру</h2>
       <div class="section__subtitle">Вы можете заполнить заявку на бесплатный подбор квартиры или <a class="js-popup-open" href="#">подобрать в один клик </a>и наш менеджер свяжется с вами</div>
       <div class="section__content">
-        <form class="form">
+        <form class="form js-form" novalidate="novalidate">
           <div class="form__block">
             <div class="form__input-group">
               <div class="form__custom-input js-custom-input">
@@ -216,7 +217,7 @@
                   </div>
                 </div>
               </div>
-              <label class="form__label">Площадь, кв. м.</label>
+              <label class="form__label">Общая площадь, кв. м.</label>
             </div>
             <div class="form__input-group">
               <div class="form__custom-input js-custom-input">
@@ -240,7 +241,7 @@
                   </div>
                 </div>
               </div>
-              <label class="form__label">Комнат</label>
+              <label class="form__label">Количество комнат</label>
             </div>
             <div class="form__input-group">
               <select class="form__input js-styleselect" name="status">
@@ -531,7 +532,7 @@
   </footer>
   <a class="floating-button js-popup-open"></a>
   <div class="popup js-popup">
-    <form class="circle-form js-form">
+    <form class="circle-form js-circle-form">
       <div class="circle-form__content">
         <div class="circle-form__title">Закажи <strong>БЕСПЛАТНУЮ</strong> консультацию!</div>
         <div class="circle-form__input-group circle-form__input-group--user">
