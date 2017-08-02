@@ -264,7 +264,7 @@
     },
     {
       "image": "new-building-2.jpg",
-      "badge": "Топ продаж!",
+      "badge": "ТОП ПРОДАЖ!",
       "type": "new-building",
       "headParams": [
         [
@@ -415,7 +415,7 @@
     },
     {
       "image": "old-building-2.jpg",
-      "badge": "Срочная продажа",
+      "badge": "СРОЧНАЯ ПРОДАЖА",
       "type": "old-building",
       "headParams": [
         [

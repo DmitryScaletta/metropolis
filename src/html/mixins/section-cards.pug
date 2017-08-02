@@ -13,6 +13,8 @@ mixin card(card)
           +card-params(params)
       .card__text
         +card-params(card.params)
+    if card.badge !== undefined
+      .card__badge!= card.badge
 
 mixin card-review(review)
   -
