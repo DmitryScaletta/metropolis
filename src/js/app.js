@@ -1,7 +1,9 @@
-import Tooltip from 'tooltip.js';
-import MoveTo from 'moveto';
 import $ from 'jquery';
 import 'owl.carousel';
+import MoveTo from 'moveto';
+import Tooltip from 'tooltip.js';
+import noUiSlider from 'nouislider';
+import styleSelect from 'styleselect';
 
 
 // mobile menu
@@ -164,7 +166,7 @@ $('.js-slider-partners').owlCarousel({
 // form validation
 (() => {
   Array.prototype.forEach.call(
-    document.querySelectorAll('.form'),
+    document.querySelectorAll('.js-form'),
     (form) => {
       const validatedItems = [
         form.querySelector('input[name=name]'),
@@ -229,11 +231,125 @@ $('.js-slider-partners').owlCarousel({
 
   Array.prototype.forEach.call(
     document.getElementsByClassName('js-popup-open'),
-    elem => elem.addEventListener('click', togglePopup),
+    elem => elem.addEventListener('click', (e) => {
+      togglePopup();
+      e.preventDefault();
+    }),
   );
 
   const popupClose = popup.querySelector('.js-popup-close');
   if (popupClose === null) return;
 
   popupClose.addEventListener('click', togglePopup);
+})();
+
+
+// noui slider
+(() => {
+  Array.prototype.forEach.call(
+    document.getElementsByClassName('js-noui-slider'),
+    (elem) => {
+      const dataOptions = elem.getAttribute('data-options');
+      if (dataOptions === '' || dataOptions === null) return;
+
+      const options = JSON.parse(dataOptions);
+
+      noUiSlider.create(elem, {
+        ...options,
+        connect: true,
+        margin: options.step,
+      });
+    },
+  );
+})();
+
+
+// styleselect
+(() => {
+  Array.prototype.forEach.call(
+    document.querySelectorAll('select.js-styleselect'),
+    select => styleSelect(select),
+  );
+})();
+
+
+// custom inputs
+(() => {
+  const classNameActive = 'active';
+
+  const isAncestorOf = (elem, container) => {
+    let parent = elem.parentNode;
+
+    if (container === elem) return true;
+
+    while (parent && parent.nodeType && parent.nodeType === 1) {
+      if (parent === container) return true;
+      parent = parent.parentNode;
+    }
+    return false;
+  };
+
+  const round = n => Math.ceil(Number(n));
+
+  const initializeCustomInput = (customInput) => {
+    const toggleCustomInput = () => customInput.classList.toggle(classNameActive);
+
+    customInput.addEventListener('click', (e) => {
+      if (e.target === customInput) {
+        toggleCustomInput();
+      }
+    });
+
+    document.body.addEventListener('click', (e) => {
+      if (!isAncestorOf(e.target, customInput)) {
+        customInput.classList.remove(classNameActive);
+      }
+    });
+
+    const slider     = customInput.querySelector('.js-noui-slider');
+    const checkboxes = customInput.querySelectorAll('input[type=checkbox]');
+
+    const updateInputValue = () => {
+      const value = [];
+
+      if (slider !== null) {
+        const sliderValue = slider.noUiSlider.get();
+
+        const result = (typeof sliderValue === 'string')
+          ? round(sliderValue)
+          : sliderValue.map(round).join(' - ');
+
+        value.push(result);
+      }
+
+      if (checkboxes.length > 0) {
+        const checkboxesValue = Array.prototype.map.call(
+          checkboxes,
+          checkbox => (checkbox.checked ? checkbox.nextElementSibling.textContent : null),
+        ).filter(v => v !== null);
+
+        if (checkboxesValue.length > 0) value.push(checkboxesValue.join(', '));
+      }
+
+      customInput.firstElementChild.value = value.join(', ');
+    };
+
+    updateInputValue(customInput);
+
+    if (slider !== null) {
+      slider.noUiSlider.on('update', updateInputValue);
+    }
+
+    if (checkboxes.length > 0) {
+      Array.prototype.forEach.call(
+        checkboxes,
+        checkbox => checkbox.addEventListener('change', updateInputValue),
+      );
+    }
+  };
+
+  Array.prototype.forEach.call(
+    document.getElementsByClassName('js-custom-input'),
+    customInput => initializeCustomInput(customInput),
+  );
 })();
