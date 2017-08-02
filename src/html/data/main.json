@@ -264,7 +264,7 @@
     },
     {
       "image": "new-building-2.jpg",
-      "badge": "ТОП ПРОДАЖ!",
+      "badge": "<strong>ТОП ПРОДАЖ!</strong>",
       "type": "new-building",
       "headParams": [
         [
@@ -415,7 +415,7 @@
     },
     {
       "image": "old-building-2.jpg",
-      "badge": "СРОЧНАЯ ПРОДАЖА",
+      "badge": "<strong>СРОЧНАЯ ПРОДАЖА</strong>",
       "type": "old-building",
       "headParams": [
         [
@@ -492,7 +492,7 @@
     },
     {
       "image": "sale-1.jpg",
-      "badge": "Продана за <br> <strong>29 дней</strong>",
+      "badge": "<span style='font-size:13px'>Продана <br> за <br> <strong><span style='font-size:16px'>29</span> дней</strong></span>",
       "type": "sale",
       "headParams": [
         [
@@ -531,7 +531,7 @@
     },
     {
       "image": "sale-2.jpg",
-      "badge": "Продана за <br> <strong>18 дней</strong>",
+      "badge": "<span style='font-size:13px'>Продана <br> за <br> <strong><span style='font-size:16px'>18</span> дней</strong></span>",
       "type": "sale",
       "headParams": [
         [
@@ -570,7 +570,7 @@
     },
     {
       "image": "sale-3.jpg",
-      "badge": "Продана за <br> <strong>32 дня</strong>",
+      "badge": "<span style='font-size:13px'>Продана <br> за <br> <strong><span style='font-size:16px'>32</span> дня</strong></span>",
       "type": "sale",
       "headParams": [
         [

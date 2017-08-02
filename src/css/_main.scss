@@ -1448,7 +1448,6 @@
 
   &__badge {
     display: flex;
-    padding: 0 10px;
     position: absolute;
     flex-direction: column;
     justify-content: center;
@@ -1457,8 +1456,8 @@
     left: 20px;
     width: 80px;
     height: 80px;
-    font-size: 13px;
-    line-height: 1.33;
+    font-size: 12px;
+    line-height: 16px;
     border-radius: 50%;
     color: $color-text-light;
     background: $color-primary;
