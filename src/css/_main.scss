@@ -1634,7 +1634,11 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 30px 0 45px;
+  padding: 30px 0 15px;
+
+  @media (min-width: $screen-md) {
+    padding: 30px 0 45px;
+  }
 
   &__block {
     display: flex;
