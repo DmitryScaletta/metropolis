@@ -55,7 +55,7 @@
           <button class="button header__button js-popup-open">Заказать консультацию</button>
         </div>
         <div class="header__form">
-          <form class="form circle-form">
+          <form class="circle-form js-form">
             <div class="circle-form__content">
               <div class="circle-form__title">Закажи <strong>БЕСПЛАТНУЮ</strong> консультацию!</div>
               <div class="circle-form__input-group circle-form__input-group--user">
@@ -180,6 +180,7 @@
               </ul>
             </div>
           </div>
+          <div class="card__badge">ТОП ПРОДАЖ!</div>
         </div>
         <div class="card card--house card--new-building">
           <div class="card__image" style="background-image: url('img/media/new-building-3.jpg');"></div>
@@ -213,7 +214,161 @@
   <section class="section section--gray">
     <div class="section__inner">
       <h2 class="section__title">Подборать квартиру в новостройке</h2>
-      <div class="section__content" style="min-height: 500px;"></div>
+      <div class="section__subtitle">Вы можете заполнить заявку на бесплатный подбор квартиры или <a class="js-popup-open" href="#">подобрать в один клик </a>и наш менеджер свяжется с вами</div>
+      <div class="section__content">
+        <form class="form">
+          <div class="form__block">
+            <div class="form__input-group">
+              <div class="form__custom-input js-custom-input">
+                <input class="form__input" type="text" name="price" />
+                <div class="form__input-popup">
+                  <div class="form__input-popup-range"><span>1000</span><span>7500</span>
+                  </div>
+                  <div class="form__input-popup-slider">
+                    <div class="js-noui-slider" data-options="{&quot;start&quot;:[2000,4000],&quot;range&quot;:{&quot;min&quot;:1000,&quot;max&quot;:7500},&quot;step&quot;:100}"></div>
+                  </div>
+                </div>
+              </div>
+              <label class="form__label">Цена, т.р.</label>
+            </div>
+            <div class="form__input-group">
+              <div class="form__custom-input js-custom-input">
+                <input class="form__input" type="text" name="square" />
+                <div class="form__input-popup">
+                  <div class="form__input-popup-range"><span>10</span><span>200+</span>
+                  </div>
+                  <div class="form__input-popup-slider">
+                    <div class="js-noui-slider" data-options="{&quot;start&quot;:[20,50],&quot;range&quot;:{&quot;min&quot;:[10,5],&quot;30%&quot;:[30,10],&quot;max&quot;:[200]}}"></div>
+                  </div>
+                </div>
+              </div>
+              <label class="form__label">Площадь, кв. м.</label>
+            </div>
+            <div class="form__input-group">
+              <div class="form__custom-input js-custom-input">
+                <input class="form__input" type="text" name="rooms" />
+                <div class="form__input-popup">
+                  <div class="form__input-popup-checkboxes">
+                    <input class="form__checkbox" type="checkbox" id="rooms-studio" name="rooms-studio" />
+                    <label class="form__checkbox-label" for="rooms-studio">Студия</label>
+                    <input class="form__checkbox" type="checkbox" id="rooms-1" name="rooms-1" />
+                    <label class="form__checkbox-label" for="rooms-1">1</label>
+                    <input class="form__checkbox" type="checkbox" id="rooms-2" name="rooms-2" checked="checked" />
+                    <label class="form__checkbox-label" for="rooms-2">2</label>
+                    <input class="form__checkbox" type="checkbox" id="rooms-3" name="rooms-3" checked="checked" />
+                    <label class="form__checkbox-label" for="rooms-3">3</label>
+                    <input class="form__checkbox" type="checkbox" id="rooms-4" name="rooms-4" />
+                    <label class="form__checkbox-label" for="rooms-4">4</label>
+                    <input class="form__checkbox" type="checkbox" id="rooms-5" name="rooms-5" />
+                    <label class="form__checkbox-label" for="rooms-5">5</label>
+                    <input class="form__checkbox" type="checkbox" id="rooms-more-than-5" name="rooms-more-than-5" />
+                    <label class="form__checkbox-label" for="rooms-more-than-5">более 5</label>
+                  </div>
+                </div>
+              </div>
+              <label class="form__label">Комнат</label>
+            </div>
+            <div class="form__input-group">
+              <select class="form__input js-styleselect" name="status">
+                <option>Черновая</option>
+                <option>Предчистовая</option>
+                <option>Ремонт</option>
+              </select>
+              <label class="form__label">Состояние</label>
+            </div>
+          </div>
+          <div class="form__block">
+            <div class="form__input-group">
+              <select class="form__input js-styleselect" name="release-date">
+                <option>сдан</option>
+                <option>3 кв. 2017 г.</option>
+                <option>4 кв. 2017 г.</option>
+                <option>1 кв. 2018 г.</option>
+                <option>2 кв. 2018 г.</option>
+                <option>3 кв. 2018 г.</option>
+                <option>4 кв. 2018 г.</option>
+                <option>1 полуг. 2019 г.</option>
+                <option>2 полуг. 2019 г.</option>
+                <option>1 полуг. 2020 г.</option>
+                <option>2 полуг. 2020 г.</option>
+                <option>1 полуг. 2021 г.</option>
+                <option>2 полуг. 2021 г.</option>
+                <option>не ограничен</option>
+              </select>
+              <label class="form__label">Срок сдачи</label>
+            </div>
+            <div class="form__input-group">
+              <div class="form__custom-input js-custom-input">
+                <input class="form__input" type="text" name="floor-range" />
+                <div class="form__input-popup">
+                  <div class="form__input-popup-range"><span>1</span><span>31+</span>
+                  </div>
+                  <div class="form__input-popup-slider">
+                    <div class="js-noui-slider" data-options="{&quot;start&quot;:[1,10],&quot;range&quot;:{&quot;min&quot;:1,&quot;max&quot;:31},&quot;step&quot;:1}"></div>
+                  </div>
+                  <div class="form__input-popup-checkbox">
+                    <input class="form__checkbox" type="checkbox" id="floor-not-last" name="floor-not-last" />
+                    <label class="form__checkbox-label" for="floor-not-last">Не последний</label>
+                  </div>
+                </div>
+              </div>
+              <label class="form__label">Этаж</label>
+            </div>
+            <div class="form__input-group">
+              <div class="form__custom-input js-custom-input">
+                <input class="form__input" type="text" name="floors-range" />
+                <div class="form__input-popup">
+                  <div class="form__input-popup-range"><span>1</span><span>31+</span>
+                  </div>
+                  <div class="form__input-popup-slider">
+                    <div class="js-noui-slider" data-options="{&quot;start&quot;:[5,10],&quot;range&quot;:{&quot;min&quot;:1,&quot;max&quot;:31},&quot;step&quot;:1}"></div>
+                  </div>
+                </div>
+              </div>
+              <label class="form__label">Этажей в доме</label>
+            </div>
+            <div class="form__input-group">
+              <select class="form__input js-styleselect" name="house-type">
+                <option>Монолит-кирпич</option>
+                <option>Монолит</option>
+                <option>Кирпич</option>
+                <option>Блок</option>
+                <option>Панель</option>
+              </select>
+              <label class="form__label">Тип дома</label>
+            </div>
+          </div>
+          <div class="form__block">
+            <div class="form__input-group">
+              <select class="form__input js-styleselect" name="district">
+                <option>Центр</option>
+                <option>40-лет Победы</option>
+                <option>Московская</option>
+                <option>Мосты</option>
+                <option>ГМР</option>
+                <option>ЖМР</option>
+                <option>КМР</option>
+                <option>ПМР</option>
+                <option>СМР</option>
+                <option>СХИ</option>
+                <option>ФМР</option>
+                <option>ЧМР</option>
+                <option>ЮМР</option>
+                <option>Вавилова</option>
+                <option>Ейское Шоссе</option>
+                <option>Российская</option>
+                <option>Ростовское Шоссе</option>
+              </select>
+              <label class="form__label">Район</label>
+            </div>
+            <div class="form__input-group form__input-group--grow">
+              <textarea class="form__input form__textarea" id="comment"></textarea>
+              <label class="form__label">Комментарий</label>
+            </div>
+            <button class="button form__button">Получить варианты</button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
   <section class="section section--in-numbers">
@@ -413,7 +568,7 @@
   </footer>
   <a class="floating-button js-popup-open"></a>
   <div class="popup js-popup">
-    <form class="form circle-form">
+    <form class="circle-form js-form">
       <div class="circle-form__content">
         <div class="circle-form__title">Закажи <strong>БЕСПЛАТНУЮ</strong> консультацию!</div>
         <div class="circle-form__input-group circle-form__input-group--user">
