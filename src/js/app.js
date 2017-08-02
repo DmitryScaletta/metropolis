@@ -227,7 +227,7 @@ $('.js-slider-partners').owlCarousel({
 
     const handleOnFucus = (field) => {
       field.element.classList.remove(classNameInvalid);
-      Object.values(field.tooltips).forEach(tooltip => tooltip.hide());
+      Object.keys(field.tooltips).forEach(key => field.tooltips[key].hide());
     };
 
     fields.forEach(
