@@ -375,9 +375,17 @@
 
 .circle-form {
   position: relative;
+  padding: 0 10px;
   z-index: 1;
   text-align: center;
   color: $color-text-light;
+  width: 100%;
+  min-width: 400px;
+  max-width: 425px;
+
+  @media (min-width: $screen-xl) {
+    max-width: 470px;
+  }
 
   &.success {
     .circle-form__title,
@@ -393,24 +401,32 @@
 
   &__content {
     position: relative;
-    padding: 48px 67px 20px;
+    padding: 48px 55px 20px;
     z-index: 1;
-    height: 405px;
-    width: 405px;
-    border-radius: 50%;
+    height: 380px;
+    border-radius: 190px;
     background: $color-bg-dark;
     box-shadow: $box-shadow;
 
+    @media (min-width: $screen-sm) {
+      padding: 48px 67px 20px;
+      height: 405px;
+      border-radius: 50%;
+    }
+
     @media (min-width: $screen-xl) {
-      padding: 70px 80px 30px;
+      padding: 70px 94px 30px;
       height: 450px;
-      width: 450px;
     }
   }
 
   &__title {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-size: rem(18px);
+
+    @media (min-width: $screen-sm) {
+      margin-bottom: 25px;
+    }
 
     @media (min-width: $screen-xl) {
       margin-bottom: 35px;
@@ -418,15 +434,12 @@
   }
 
   &__input-group {
-    display: flex;
     position: relative;
-    flex-direction: column;
-    justify-content: center;
+    margin-bottom: 30px;
+    padding-left: 22px;
 
     &--user,
     &--phone {
-      margin-bottom: 30px;
-
       &::after {
         @extend .icon;
 
@@ -434,7 +447,7 @@
         position: absolute;
         flex-direction: column;
         justify-content: center;
-        left: 0;
+        left: -10px;
         top: 0;
         bottom: 0;
         font-size: rem(20px);
@@ -460,9 +473,8 @@
     @extend %transition;
 
     display: block;
-    margin-left: 32px;
     padding: 10px 15px;
-    width: 240px;
+    width: 100%;
     font-size: inherit;
     border: 1px solid transparent;
     outline: none;
@@ -488,22 +500,30 @@
   &__link {
     display: inline-block;
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
     left: 50%;
     transform: translate(-50%, 0);
     max-width: 160px;
     font-size: 12px;
     line-height: 1.33;
+
+    @media (min-width: $screen-sm) {
+      bottom: 40px;
+    }
   }
 
   &__success {
     display: none;
-    padding: 0 90px;
+    padding: 0 40px;
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
     transform: translate(-50%, -50%);
+
+    @media (min-width: $screen-sm) {
+      padding: 0 90px;
+    }
 
     &-title {
       margin-bottom: 35px;
@@ -518,7 +538,7 @@
   &__icon {
     @extend .icon;
 
-    display: flex;
+    display: none;
     position: absolute;
     z-index: 2;
     top: 0;
@@ -532,20 +552,25 @@
     background: $color-secondary;
     box-shadow: $box-shadow;
 
-    &::after {
-      content: $icon-interaction;
-      font-size: 50px;
+    @media (min-width: $screen-sm) {
+      display: flex;
     }
 
     @media (min-width: $screen-xl) {
       height: 100px;
       width: 100px;
     }
+
+    &::after {
+      content: $icon-interaction;
+      font-size: 50px;
+    }
   }
 
   &__info {
-    padding: 38px 15px 0 38px;
+    display: none;
     position: absolute;
+    padding: 38px 15px 0 38px;
     z-index: 0;
     top: 288px;
     left: 288px;
@@ -557,6 +582,10 @@
     text-align: left;
     background: $color-thirdly;
     box-shadow: $box-shadow;
+
+    @media (min-width: $screen-sm) {
+      display: block;
+    }
 
     @media (min-width: $screen-xl) {
       padding: 46px 30px 0 48px;
@@ -587,11 +616,17 @@
     @extend %close-popup-button;
 
     position: absolute;
-    top: 25px;
-    left: 356px;
+    top: 10px;
+    right: 10px;
+
+    @media (min-width: $screen-sm) {
+      margin-left: 0;
+      top: 25px;
+      right: 5px;
+    }
 
     @media (min-width: $screen-xl) {
-      left: 390px;
+      right: 15px;
     }
   }
 }
