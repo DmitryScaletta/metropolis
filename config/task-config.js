@@ -4,12 +4,14 @@ const wait         = require('gulp-wait');
 const pug          = require('gulp-pug');
 const prettify     = require('gulp-html-prettify');
 const sass         = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
+const postcss      = require('gulp-postcss');
 const csso         = require('gulp-csso');
 const sourcemaps   = require('gulp-sourcemaps');
 const changed      = require('gulp-changed');
 const imagemin     = require('gulp-imagemin');
 const pngquant     = require('imagemin-pngquant');
+const autoprefixer = require('autoprefixer');
+const mqpacker     = require('css-mqpacker');
 const browserSync  = require('browser-sync');
 const handleErrors = require('blendid/gulpfile.js/lib/handleErrors');
 
@@ -48,13 +50,17 @@ module.exports = {
           src:  path.resolve(process.env.PWD, PATH_CONFIG.src,  PATH_CONFIG.stylesheets.src, `**/*.{${TASK_CONFIG.stylesheets.extensions}}`),
           dest: path.resolve(process.env.PWD, PATH_CONFIG.dest, PATH_CONFIG.stylesheets.dest),
         };
+
+        const postCssPlugins = [autoprefixer()];
+        if (global.production) postCssPlugins.push(mqpacker({ sort: true }));
+
         return gulp
           .src(paths.src)
           .pipe(wait(500))
           .pipe(gulpif(!global.production, sourcemaps.init()))
           .pipe(sass(TASK_CONFIG.stylesheets.sass))
           .on('error', handleErrors)
-          .pipe(autoprefixer())
+          .pipe(postcss(postCssPlugins))
           .pipe(gulpif(global.production, csso()))
           .pipe(gulpif(!global.production, sourcemaps.write()))
           .pipe(gulp.dest(paths.dest))
