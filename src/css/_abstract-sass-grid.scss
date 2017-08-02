@@ -173,7 +173,7 @@ html {
   $breackpoint-min-width: map-get($grid-breakpoints, $breakpoint-name);
   $container-max-width:   map-get($grid-max-widths,  $breakpoint-name);
 
-  @media only screen and (min-width: $breackpoint-min-width) {
+  @media (min-width: $breackpoint-min-width) {
     %container {
       width: $container-max-width;
     }
