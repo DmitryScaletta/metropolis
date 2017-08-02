@@ -871,7 +871,7 @@
       "maxLabel": "7500"
     },
     "square": {
-      "label": "Площадь, кв. м.",
+      "label": "Общая площадь, кв. м.",
       "type": "slider-range",
       "options": {
         "start": [20, 50],
@@ -885,12 +885,12 @@
       "maxLabel": "200+"
     },
     "square-number": {
-      "label": "Общая площадь",
+      "label": "Общая площадь, кв. м.",
       "type": "number",
       "min": "10"
     },
     "rooms": {
-      "label": "Комнат",
+      "label": "Количество комнат",
       "type": "checkboxes",
       "items": [
         {
@@ -926,7 +926,7 @@
       ]
     },
     "rooms-number": {
-      "label": "Комнат",
+      "label": "Количество комнат",
       "type": "number",
       "min": "1"
     },
