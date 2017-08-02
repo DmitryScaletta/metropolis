@@ -13,7 +13,7 @@ mixin form-input(input)
       when 'text'
         input(type=input.type, name=input.name).form__input
       when 'number'
-        input(type=input.type, name=input.name, min=input.min, max=input.max).form__input
+        input(type=input.type, name=input.name, min=input.min, max=input.max, value=input.value).form__input
       when 'select'
         select(name=input.name).form__input.js-styleselect
           each option in input.items
@@ -51,7 +51,7 @@ mixin section-form(form)
         a(href='#').js-popup-open подобрать в один клик 
         | и наш менеджер свяжется с вами
       .section__content
-        form.form
+        form(novalidate).form.js-form
           - var items = form.fields.map(name => Object.assign({}, { name }, inputs[name]));
 
           each i in [0, 4, 8]

@@ -5,6 +5,8 @@ import Tooltip from 'tooltip.js';
 import noUiSlider from 'nouislider';
 import styleSelect from 'styleselect';
 
+import isInt from 'validator/lib/isInt';
+
 
 // mobile menu
 (() => {
@@ -39,6 +41,7 @@ import styleSelect from 'styleselect';
   const youtubeLazyLoad = (youtube) => {
     const dataEmbed = youtube.getAttribute('data-embed');
 
+    // eslint-disable-next-line no-param-reassign
     youtube.style.backgroundImage = `url('https://img.youtube.com/vi/${dataEmbed}/sddefault.jpg')`;
 
     const removeAllChildNodes = (elem) => {
@@ -165,50 +168,182 @@ $('.js-slider-partners').owlCarousel({
 
 // form validation
 (() => {
-  Array.prototype.forEach.call(
-    document.querySelectorAll('.js-form'),
-    (form) => {
-      const validatedItems = [
-        form.querySelector('input[name=name]'),
-        form.querySelector('input[name=tel]'),
-      ].filter(item => item !== null);
+  const isRequired = value => value.trim() !== '';
 
-      const tooltips = validatedItems.map(item => new Tooltip(item, {
-        title: 'Это обязательное поле',
-        trigger: '',
-      }));
+  const isFieldValid = (field, validationType) => {
+    switch (validationType) {
+      case 'isRequired': return isRequired(field.element.value);
+      case 'isInteger':  return isInt(field.element.value, field.rules.isInteger);
+      default: return false;
+    }
+  };
 
-      const classNameInvalid = 'invalid';
+  const buildTooltip = (elem, title) => new Tooltip(elem, { title, trigger: '' });
 
-      // remove invalid class on focus
-      validatedItems.forEach((elem, index) => {
-        elem.addEventListener('focus', () => {
-          elem.classList.remove(classNameInvalid);
-          tooltips[index].hide();
-        });
-      });
+  const createTooltip = (field, validationType) => {
+    switch (validationType) {
+      case 'isRequired': {
+        return buildTooltip(field.element, 'Это обязательное поле');
+      }
+      case 'isInteger': {
+        const min = field.rules.isInteger.min;
+        const max = field.rules.isInteger.max;
 
-      const validateTextInput = value => value.trim() !== '';
+        if (min === undefined && max === undefined) return null;
 
-      form.addEventListener('submit', (e) => {
-        const isFormValid = validatedItems.every((item, index) => {
-          const isItemValid = validateTextInput(item.value);
-          if (!isItemValid) {
-            item.classList.add(classNameInvalid);
-            tooltips[index].show();
+        const limits = [];
+        if (min !== undefined) limits.push(`больше ${min}`);
+        if (max !== undefined) limits.push(`меньше ${max}`);
+
+        const title = `Пожалуйста, введите число ${limits.join(' и ')}.`;
+
+        return buildTooltip(field.element, title);
+      }
+      default: return null;
+    }
+  };
+
+  const classNameInvalid = 'invalid';
+
+  const createFormValidator = (formContainer, formFields) => {
+    const fields = formFields.map((field) => {
+      const element = formContainer.querySelector(field.element);
+      if (element === null) return null;
+
+      const rules = { ...field.rules };
+
+      if (rules.isInteger === true) {
+        rules.isInteger = {};
+
+        const attrMax = element.getAttribute('max');
+        const attrMin = element.getAttribute('min');
+
+        if (attrMax !== '' && attrMax !== null) rules.isInteger.max = Number(attrMax);
+        if (attrMin !== '' && attrMin !== null) rules.isInteger.min = Number(attrMin);
+      }
+
+      return { element, rules, tooltips: {} };
+    }).filter(field => field !== null);
+
+    const handleOnFucus = (field) => {
+      field.element.classList.remove(classNameInvalid);
+      Object.values(field.tooltips).forEach(tooltip => tooltip.hide());
+    };
+
+    fields.forEach(
+      field => field.element.addEventListener('focus', handleOnFucus.bind(null, field)),
+    );
+
+    const validateForm = () => fields.every(
+      field => Object.keys(field.rules).every((validationType) => {
+        if (!isFieldValid(field, validationType)) {
+          field.element.classList.add(classNameInvalid);
+
+          if (field.tooltips[validationType] === undefined) {
+            // eslint-disable-next-line no-param-reassign
+            field.tooltips[validationType] = createTooltip(field, validationType);
           }
-          return isItemValid;
-        });
+          field.tooltips[validationType].show();
 
-        if (!isFormValid) {
-          e.preventDefault();
-          return;
+          return false;
         }
+        return true;
+      }),
+    );
 
-        form.classList.add('success');
-        e.preventDefault();
-      });
-    },
+    return validateForm;
+  };
+
+
+  const circleForm = {
+    container: '.js-circle-form',
+    fields: [
+      {
+        element: 'input[name=name]',
+        rules: {
+          isRequired: true,
+        },
+      },
+      {
+        element: 'input[name=tel]',
+        rules: {
+          isRequired: true,
+        },
+      },
+    ],
+  };
+
+  const form = {
+    container: '.js-form',
+    fields: [
+      {
+        element: 'input[name=address]',
+        rules: {
+          isRequired: true,
+        },
+      },
+      {
+        element: 'input[name=square-number]',
+        rules: {
+          isRequired: true,
+          isInteger: true,
+        },
+      },
+      {
+        element: 'input[name=rooms-number]',
+        rules: {
+          isRequired: true,
+          isInteger: true,
+        },
+      },
+      {
+        element: 'input[name=year-built]',
+        rules: {
+          isRequired: true,
+          isInteger: true,
+        },
+      },
+    ],
+  };
+
+  const circleFormHandleSubmit = (formContainer) => {
+    const isFormValid = createFormValidator(formContainer, circleForm.fields);
+
+    return (e) => {
+      e.preventDefault();
+
+      if (!isFormValid()) return;
+
+      formContainer.classList.add('success');
+    };
+  };
+
+  const mainFormHandleSubmit = (formContainer) => {
+    const isFormValid = createFormValidator(formContainer, form.fields);
+
+    return (e) => {
+      e.preventDefault();
+
+      if (!isFormValid()) return;
+
+      global.togglePopupForm();
+    };
+  };
+
+  Array.prototype.forEach.call(
+    document.querySelectorAll(circleForm.container),
+    formContainer => formContainer.addEventListener(
+      'submit',
+      circleFormHandleSubmit(formContainer),
+    ),
+  );
+
+  Array.prototype.forEach.call(
+    document.querySelectorAll(form.container),
+    formContainer => formContainer.addEventListener(
+      'submit',
+      mainFormHandleSubmit(formContainer),
+    ),
   );
 })();
 
@@ -224,6 +359,8 @@ $('.js-slider-partners').owlCarousel({
     popup.classList.toggle(classNameActive);
     document.body.classList.toggle('popup-open');
   };
+
+  global.togglePopupForm = togglePopup;
 
   popup.addEventListener('click', (e) => {
     if (e.target === popup) togglePopup();
@@ -312,7 +449,7 @@ $('.js-slider-partners').owlCarousel({
     const updateInputValue = () => {
       const value = [];
 
-      if (slider !== null) {
+      if (slider !== null && slider.noUiSlider !== undefined) {
         const sliderValue = slider.noUiSlider.get();
 
         const result = (typeof sliderValue === 'string')
@@ -331,6 +468,7 @@ $('.js-slider-partners').owlCarousel({
         if (checkboxesValue.length > 0) value.push(checkboxesValue.join(', '));
       }
 
+      // eslint-disable-next-line no-param-reassign
       customInput.firstElementChild.value = value.join(', ');
     };
 
