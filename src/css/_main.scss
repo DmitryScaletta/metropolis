@@ -1729,6 +1729,11 @@
     &:focus + .form__label {
       color: $color-fourthly;
     }
+
+    &.invalid {
+      background: #ffebee;
+      border-color: #ef5350;
+    }
   }
 
   &__custom-input {
