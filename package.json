@@ -34,7 +34,9 @@
     "jquery": "^3.2.1",
     "moveto": "^1.6.1",
     "normalize.css": "^7.0.0",
+    "nouislider": "^10.1.0",
     "owl.carousel": "^2.2.0",
+    "styleselect": "^1.0.2",
     "tooltip.js": "^1.1.4"
   }
 }
