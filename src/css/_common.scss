@@ -271,7 +271,7 @@ img {
       }
 
       &::after {
-        @extend .icon;
+        @extend %icon;
 
         content: $icon-angle-down;
         padding: 7px 0;

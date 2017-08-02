@@ -117,7 +117,7 @@
     padding-left: 30px;
 
     &::after {
-      @extend .icon;
+      @extend %icon;
 
       content: $icon-location;
       position: absolute;
@@ -141,7 +141,7 @@
     color: $color-text-dark;
 
     &::after {
-      @extend .icon;
+      @extend %icon;
 
       content: $icon-mobile;
       position: absolute;
@@ -441,7 +441,7 @@
     &--user,
     &--phone {
       &::after {
-        @extend .icon;
+        @extend %icon;
 
         display: flex;
         position: absolute;
@@ -536,7 +536,7 @@
   }
 
   &__icon {
-    @extend .icon;
+    @extend %icon;
 
     display: none;
     position: absolute;
@@ -632,7 +632,7 @@
 }
 
 %close-popup-button {
-  @extend .icon;
+  @extend %icon;
   @extend %transition;
 
   height: 50px;
@@ -827,7 +827,7 @@
   }
 
   &::before {
-    @extend .icon;
+    @extend %icon;
 
     content: '';
     display: flex;
@@ -1066,7 +1066,7 @@
   }
 
   &__icon {
-    @extend .icon;
+    @extend %icon;
 
     display: flex;
     margin-left: auto;
@@ -1243,7 +1243,7 @@
   }
 
   &::after {
-    @extend .icon;
+    @extend %icon;
 
     content: '';
     display: flex;
@@ -1408,7 +1408,7 @@
     margin-bottom: 6px;
 
     &::before {
-      @extend .icon;
+      @extend %icon;
 
       position: absolute;
       left: 0;
@@ -1741,7 +1741,7 @@
     cursor: pointer;
 
     &::after {
-      @extend .icon;
+      @extend %icon;
 
       content: $icon-angle-down;
       position: absolute;
@@ -2074,7 +2074,7 @@
 }
 
 .floating-button {
-  @extend .icon;
+  @extend %icon;
   @extend %transition;
 
   display: flex;
