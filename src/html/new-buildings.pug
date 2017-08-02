@@ -11,10 +11,7 @@ block content
 
   +section-cards(cards.filter(card => card.type === 'new-building'), 'houses', 'Более 200 новостроек в Краснодаре')
 
-  section.section.section--gray
-    .section__inner
-      h2.section__title Подборать квартиру в новостройке
-      .section__content(style='min-height: 500px')
+  +section-form(forms.newBuilding)
 
   include includes/section-in-numbers.pug
 

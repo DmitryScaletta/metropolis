@@ -11,6 +11,8 @@ block content
 
   +section-cards(cards.filter(card => card.type === 'sale'), 'houses', 'Последние проданные объекты')
 
+  +section-form(forms.sale)
+
   include includes/section-in-numbers.pug
 
   +section-cards(reviews.filter(item => item.type === 'sale'))

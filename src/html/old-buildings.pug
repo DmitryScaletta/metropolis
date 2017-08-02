@@ -11,6 +11,8 @@ block content
 
   +section-cards(cards.filter(card => card.type === 'old-building'), 'houses', 'Более 36 000 объектов в Краснодаре')
 
+  +section-form(forms.oldBuilding)
+
   include includes/section-in-numbers.pug
 
   +section-cards(reviews.filter(item => item.type === 'old-building'))

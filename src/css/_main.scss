@@ -625,7 +625,7 @@
 .section {
   position: relative;
   padding: 15px 0;
-  overflow: hidden;
+  // overflow: hidden;
 
   &--gray {
     background: $color-bg-soft;
@@ -683,9 +683,15 @@
     text-transform: uppercase;
   }
 
+  &__subtitle {
+    margin: -15px auto 0;
+    max-width: 690px;
+    text-align: center;
+  }
+
   &__content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 }
 
@@ -1313,6 +1319,7 @@
   }
 
   &__inner {
+    position: relative;
     padding: 15px 20px 0;
 
     @media (min-width: $screen-sm) {
@@ -1621,6 +1628,220 @@
     @media (min-width: $screen-lg) {
       top: 55px;
     }
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 30px 0 45px;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+  }
+
+  &__input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+
+    &--grow {
+      flex-grow: 1;
+    }
+  }
+
+  &__label {
+    @extend %transition;
+
+    display: block;
+    margin-left: 12px;
+    margin-bottom: 7px;
+    order: -1;
+    font-size: 13px;
+    font-weight: bold;
+    color: #b4b4b4;
+    transition-property: color;
+  }
+
+  &__input {
+    @extend %transition;
+
+    display: block;
+    padding: 0 15px;
+    width: 100%;
+    height: rem(40px);
+    line-height: rem(40px);
+    font-family: inherit;
+    color: inherit;
+    border: 1px solid #cac9c9;
+    border-radius: 2px;
+    background: #fff;
+    outline: none;
+    transition-property: border-color;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:focus {
+      border-color: $color-fourthly;
+    }
+
+    &:focus + .form__label {
+      color: $color-fourthly;
+    }
+  }
+
+  &__custom-input {
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      @extend .icon;
+
+      content: $icon-angle-down;
+      position: absolute;
+      padding: 7px 0;
+      right: 15px;
+      top: 0;
+      line-height: rem(24px);
+      font-size: 18px;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(#fff, 0); // IE10 fix
+    }
+
+    &.active {
+      &::after {
+        content: $icon-angle-up;
+      }
+
+      .form__input-popup {
+        display: block;
+      }
+
+      .form__input {
+        border-color: $color-fourthly;
+      }
+
+      + .form__label {
+        color: $color-fourthly;
+      }
+    }
+
+    .form__input {
+      padding-right: 40px;
+    }
+  }
+
+  &__textarea {
+    min-height: 134px;
+    flex-grow: 1;
+    resize: none;
+  }
+
+  &__input-popup {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    padding: 8px 15px;
+    top: calc(100% + 16px);
+    left: -1px;
+    right: -1px;
+    line-height: 1.5;
+    border: 1px solid #cac9c9;
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 0 5px 5px rgba(#1d1915, 0.16);
+    cursor: auto;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translate(-50%, 0) rotate(45deg);
+      height: 8px;
+      width: 8px;
+      background: #fff;
+      border: 1px solid #cac9c9;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    &-range {
+      color: #cac9c9;
+      font-size: 0;
+
+      span {
+        display: inline-block;
+        width: 50%;
+        font-size: 1rem;
+
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+
+    &-checkboxes {
+      display: flex;
+      margin: 15px 15px 5px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &:last-child label:last-child {
+        width: 117px;
+      }
+    }
+
+    &-checkbox {
+      text-align: right;
+    }
+
+    &-slider {
+      padding-bottom: 10px;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked + .form__checkbox-label {
+      border-color: $color-fourthly;
+    }
+
+    &-label {
+      @extend %transition;
+
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 4px 12px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: normal;
+      cursor: pointer;
+      border: 1px solid #dedddd;
+      border-radius: 2px;
+      transition-property: border-color, background-color;
+
+      &:hover {
+        background: rgba(#000, 0.01);
+      }
+    }
+  }
+
+  &__button {
+    margin: 21px 0 28px;
   }
 }
 
