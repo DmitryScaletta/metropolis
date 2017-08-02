@@ -854,5 +854,278 @@
     "gik.jpg",
     "vkb.jpg",
     "yug-stroy.jpg"
-  ]
+  ],
+  "inputs": {
+    "price": {
+      "label": "Цена, т.р.",
+      "type": "slider-range",
+      "options": {
+        "start": [2000, 4000],
+        "range": {
+          "min": 1000,
+          "max": 7500
+        },
+        "step": 100
+      },
+      "minLabel": "1000",
+      "maxLabel": "7500"
+    },
+    "square": {
+      "label": "Площадь, кв. м.",
+      "type": "slider-range",
+      "options": {
+        "start": [20, 50],
+        "range": {
+          "min": [10, 5],
+          "30%": [30, 10],
+          "max": [200]
+        }
+      },
+      "minLabel": "10",
+      "maxLabel": "200+"
+    },
+    "square-number": {
+      "label": "Общая площадь",
+      "type": "number",
+      "min": "10"
+    },
+    "rooms": {
+      "label": "Комнат",
+      "type": "checkboxes",
+      "items": [
+        {
+          "name": "rooms-studio",
+          "label": "Студия"
+        },
+        {
+          "name": "rooms-1",
+          "label": "1"
+        },
+        {
+          "name": "rooms-2",
+          "label": "2",
+          "checked": true
+        },
+        {
+          "name": "rooms-3",
+          "label": "3",
+          "checked": true
+        },
+        {
+          "name": "rooms-4",
+          "label": "4"
+        },
+        {
+          "name": "rooms-5",
+          "label": "5"
+        },
+        {
+          "name": "rooms-more-than-5",
+          "label": "более 5"
+        }
+      ]
+    },
+    "rooms-number": {
+      "label": "Комнат",
+      "type": "number",
+      "min": "1"
+    },
+    "status": {
+      "label": "Состояние",
+      "type": "select",
+      "items": [
+        "Черновая",
+        "Предчистовая",
+        "Ремонт"
+      ]
+    },
+    "release-date": {
+      "label": "Срок сдачи",
+      "type": "select",
+      "items": [
+        "сдан",
+        "3 кв. 2017 г.",
+        "4 кв. 2017 г.",
+        "1 кв. 2018 г.",
+        "2 кв. 2018 г.",
+        "3 кв. 2018 г.",
+        "4 кв. 2018 г.",
+        "1 полуг. 2019 г.",
+        "2 полуг. 2019 г.",
+        "1 полуг. 2020 г.",
+        "2 полуг. 2020 г.",
+        "1 полуг. 2021 г.",
+        "2 полуг. 2021 г.",
+        "не ограничен"
+      ]
+    },
+    "house-age": {
+      "label": "Возраст дома",
+      "type": "select",
+      "items": [
+        "до 1 года",
+        "до 3 лет",
+        "до 7 лет",
+        "до 15 лет",
+        "старше 15 лет"
+      ]
+    },
+    "floor-range": {
+      "label": "Этаж",
+      "type": "slider-range",
+      "options": {
+        "start": [1, 10],
+        "range": {
+          "min": 1,
+          "max": 31
+        },
+        "step": 1
+      },
+      "minLabel": "1",
+      "maxLabel": "31+",
+      "checkbox": {
+        "name": "floor-not-last",
+        "label": "Не последний"
+      }
+    },
+    "floor": {
+      "label": "Этаж",
+      "type": "slider",
+      "options": {
+        "start": 5,
+        "range": {
+          "min": 1,
+          "max": 31
+        },
+        "step": 1
+      },
+      "minLabel": "1",
+      "maxLabel": "31+"
+    },
+    "floors-range": {
+      "label": "Этажей в доме",
+      "type": "slider-range",
+      "options": {
+        "start": [5, 10],
+        "range": {
+          "min": 1,
+          "max": 31
+        },
+        "step": 1
+      },
+      "minLabel": "1",
+      "maxLabel": "31+"
+    },
+    "floors-count": {
+      "label": "Этажей в доме",
+      "type": "slider",
+      "options": {
+        "start": 10,
+        "range": {
+          "min": 1,
+          "max": 31
+        },
+        "step": 1
+      },
+      "minLabel": "1",
+      "maxLabel": "31+"
+    },
+    "house-type": {
+      "label": "Тип дома",
+      "type": "select",
+      "items": [
+        "Монолит-кирпич",
+        "Монолит",
+        "Кирпич",
+        "Блок",
+        "Панель"
+      ]
+    },
+    "district": {
+      "label": "Район",
+      "type": "select",
+      "items": [
+        "Центр",
+        "40-лет Победы",
+        "Московская",
+        "Мосты",
+        "ГМР",
+        "ЖМР",
+        "КМР",
+        "ПМР",
+        "СМР",
+        "СХИ",
+        "ФМР",
+        "ЧМР",
+        "ЮМР",
+        "Вавилова",
+        "Ейское Шоссе",
+        "Российская",
+        "Ростовское Шоссе"
+      ]
+    },
+    "comment": {
+      "label": "Комментарий",
+      "type": "textarea"
+    },
+    "address": {
+      "label": "Адрес",
+      "type": "text"
+    },
+    "year-built": {
+      "label": "Год постройки",
+      "type": "number",
+      "min": "1900",
+      "max": "2017"
+    }
+  },
+  "forms": {
+    "newBuilding": {
+      "title": "Подборать квартиру в новостройке",
+      "buttonLabel": "Получить варианты",
+      "fields": [
+        "price",
+        "square",
+        "rooms",
+        "status",
+        "release-date",
+        "floor-range",
+        "floors-range",
+        "house-type",
+        "district",
+        "comment"
+      ]
+    },
+    "oldBuilding": {
+      "title": "Подборать квартиру",
+      "buttonLabel": "Получить варианты",
+      "fields": [
+        "price",
+        "square",
+        "rooms",
+        "status",
+        "house-age",
+        "floor-range",
+        "floors-range",
+        "house-type",
+        "district",
+        "comment"
+      ]
+    },
+    "sale": {
+      "title": "Узнайте стоимость продажи вашей квартиры",
+      "buttonLabel": "Узнать стоимость",
+      "fields": [
+        "address",
+        "square-number",
+        "rooms-number",
+        "status",
+        "year-built",
+        "floor",
+        "floors-count",
+        "house-type",
+        "comment"
+      ]
+    }
+  }
 }
