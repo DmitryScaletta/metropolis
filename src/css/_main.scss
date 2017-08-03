@@ -107,6 +107,7 @@
     display: flex;
     padding: 15px 0;
     justify-content: center;
+    align-items: center;
 
     @media (min-width: $screen-sm) {
       padding: 20px 0;
@@ -292,6 +293,7 @@
   &__subtitle {
     margin-top: 20px;
     line-height: 1.66;
+    font-size: rem(18px);
     text-align: left;
   }
 
