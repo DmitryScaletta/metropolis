@@ -17,12 +17,19 @@ block content
       h2.section__title Что мы предлагаем
       .section__content.services
         each service in services
+          -
+            var href = '#';
+            switch (service.type) {
+              case 'new-building': href = menu[1].link; break;
+              case 'old-building': href = menu[2].link; break;
+              case 'sale':         href = menu[3].link; break;
+            }
           .services__item
             .service(class=`service--${service.type}`)
               .service__title!= service.title
               .service__subtitle!= service.subtitle
               .service__desc!= service.desc
-              a(href='#').button.service__button Подробнее
+              a(href=href).button.service__button Подробнее
 
   include includes/section-in-numbers.pug
 
