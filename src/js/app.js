@@ -405,7 +405,7 @@ $('.js-slider-partners').owlCarousel({
       popup.classList.toggle(classNameActive);
     };
 
-    if (popupParams.container === 'js-popup-form') {
+    if (popupParams.container === '.js-popup-form') {
       global.togglePopupForm = togglePopup;
     }
 
