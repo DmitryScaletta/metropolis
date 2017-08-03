@@ -1,11 +1,28 @@
 import $ from 'jquery';
 import 'owl.carousel';
+import FontFaceObserver from 'fontfaceobserver';
 import MoveTo from 'moveto';
 import Tooltip from 'tooltip.js';
 import noUiSlider from 'nouislider';
 import styleSelect from 'styleselect';
 
 import isInt from 'validator/lib/isInt';
+
+
+// FontFaceObserver
+(() => {
+  if (sessionStorage.fontsLoaded) return;
+
+  const font = new FontFaceObserver('TeX Gyre Heros');
+
+  font
+    .load()
+    .then(() => {
+      sessionStorage.fontsLoaded = true;
+      document.documentElement.classList.add('fonts-loaded');
+    })
+    .catch(() => { sessionStorage.fontsLoaded = false; });
+})();
 
 
 // mobile menu

@@ -16,9 +16,14 @@ html {
 }
 
 body {
-  font-family: $font-primary;
+  font-family: $font-primary-fallback;
+  // font-family: $font-primary;
   line-height: $global-line-height;
   color: $color-text-dark;
+
+  .fonts-loaded & {
+    font-family: $font-primary;
+  }
 
   &.popup-open {
     overflow: hidden;
