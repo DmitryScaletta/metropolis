@@ -269,6 +269,7 @@
 
     margin-bottom: 20px;
     text-align: center;
+    color: $color-text-soft;
 
     @media (min-width: $screen-lg) {
       margin-bottom: 0;
@@ -1733,7 +1734,7 @@
     line-height: rem(40px);
     font-family: inherit;
     color: inherit;
-    border: 1px solid #cac9c9;
+    border: 1px solid $color-form-border;
     border-radius: 2px;
     background: #fff;
     outline: none;
@@ -1820,7 +1821,7 @@
     left: -1px;
     right: -1px;
     line-height: 1.5;
-    border: 1px solid #cac9c9;
+    border: 1px solid $color-form-border;
     border-radius: 2px;
     background: #fff;
     box-shadow: 0 5px 5px rgba(#1d1915, 0.16);
@@ -1835,13 +1836,13 @@
       height: 8px;
       width: 8px;
       background: #fff;
-      border: 1px solid #cac9c9;
+      border: 1px solid $color-form-border;
       border-right: none;
       border-bottom: none;
     }
 
     &-range {
-      color: #cac9c9;
+      color: $color-form-border;
       font-size: 0;
 
       span {
