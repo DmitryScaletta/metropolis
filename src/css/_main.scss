@@ -28,6 +28,7 @@
     opacity: 0.4;
     background-position: bottom center;
     background-repeat: no-repeat;
+    background-color: $color-bg-light;
 
     @media (min-width: $screen-sm) {
       width: 1500px;
