@@ -1810,7 +1810,7 @@
     border: 1px solid $color-form-border;
     border-radius: 2px;
     background: #fff;
-    box-shadow: 0 5px 5px rgba(#1d1915, 0.16);
+    box-shadow: $box-shadow;
     cursor: auto;
 
     &::after {
