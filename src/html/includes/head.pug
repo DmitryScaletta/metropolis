@@ -13,8 +13,8 @@ head
   link(rel='stylesheet', href='css/style.css')
   script.
     // FontFaceObserver
-    (() => {
-      if (sessionStorage.fontsLoaded) {
+    (function() {
+      if (!window.Promise || sessionStorage.fontsLoaded) {
         document.documentElement.classList.add('fonts-loaded');
       }
     })();

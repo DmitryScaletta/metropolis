@@ -11,7 +11,7 @@ import isInt from 'validator/lib/isInt';
 
 // FontFaceObserver
 (() => {
-  if (sessionStorage.fontsLoaded) return;
+  if (!window.Promise) return;
 
   const font = new FontFaceObserver('TeX Gyre Heros');
 
