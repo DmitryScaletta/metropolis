@@ -13,8 +13,8 @@
     min-height: 770px;
   }
 
-  &::after {
-    $ratio: 1735 / 2370;
+  &__circle-image {
+    $circle-image-ratio: 1735 / 2370;
 
     content: '';
     position: absolute;
@@ -23,7 +23,7 @@
     left: 50%;
     transform: translate(-50%, 0);
     width: 1000px;
-    height: ceil(1000px * $ratio);
+    height: ceil(1000px * $circle-image-ratio);
     border-radius: 50%;
     opacity: 0.4;
     background-position: bottom center;
@@ -31,12 +31,12 @@
 
     @media (min-width: $screen-sm) {
       width: 1500px;
-      height: ceil(1500px * $ratio);
+      height: ceil(1500px * $circle-image-ratio);
     }
 
     @media (min-width: $screen-md) {
       width: 2000px;
-      height: ceil(2000px * $ratio);
+      height: ceil(2000px * $circle-image-ratio);
     }
 
     @media (min-width: $screen-lg) {
@@ -45,24 +45,8 @@
 
     @media (min-width: $screen-xl) {
       width: 2370px;
-      height: ceil(2370px * $ratio);
+      height: ceil(2370px * $circle-image-ratio);
     }
-  }
-
-  &--main::after {
-    background-image: url('../img/header-bg-main.jpg');
-  }
-
-  &--new-buildings::after {
-    background-image: url('../img/header-bg-new-buildings.jpg');
-  }
-
-  &--old-buildings::after {
-    background-image: url('../img/header-bg-old-buildings.jpg');
-  }
-
-  &--sale::after {
-    background-image: url('../img/header-bg-sale.jpg');
   }
 
   &__inner {

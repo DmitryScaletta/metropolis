@@ -2,22 +2,22 @@
   "pages": {
     "main": {
       "pageTitle": "Главная",
-      "headerImage": "main",
+      "headerImage": "header-bg-main.jpg",
       "headerTitle": "Хотите купить или продать <br> квартиру в Краснодаре?"
     },
     "newBuildings": {
       "pageTitle": "Новостройки",
-      "headerImage": "new-buildings",
+      "headerImage": "header-bg-new-buildings.jpg",
       "headerTitle": "Поможем купить новостройку <br> с выгодой до 50 000 р"
     },
     "oldBuildings": {
       "pageTitle": "Вторичное жильё",
-      "headerImage": "old-buildings",
+      "headerImage": "header-bg-old-buildings.jpg",
       "headerTitle": "Поможем купить вторичку <br> с выгодой до 300 000 р"
     },
     "sale": {
       "pageTitle": "Продать квартиру",
-      "headerImage": "sale",
+      "headerImage": "header-bg-sale.jpg",
       "headerTitle": "Поможем продать квартиру <br> за 30 дней"
     }
   },
