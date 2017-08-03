@@ -330,7 +330,7 @@ $('.js-slider-partners').owlCarousel({
 
       if (!isFormValid()) return;
 
-      formcontainer.classList.add('success');
+      formContainer.classList.add('success');
     };
   };
 
@@ -364,36 +364,70 @@ $('.js-slider-partners').owlCarousel({
 })();
 
 
-// popup form
+// popups
 (() => {
-  const popup = document.querySelector('.js-popup');
-  if (popup === null) return;
+  const popups = [
+    {
+      container: '.js-popup-form',
+      openButton: 'js-popup-form-open',
+    },
+    {
+      container: '.js-popup-privacy',
+      openButton: 'js-popup-privacy-open',
+    },
+  ];
 
-  const classNameActive = 'active';
+  const initializePopup = (popupParams) => {
+    const popup = document.querySelector(popupParams.container);
+    if (popup === null) return;
 
-  const togglePopup = () => {
-    popup.classList.toggle(classNameActive);
-    document.body.classList.toggle('popup-open');
+    const classNameActive    = 'active';
+    const classNameBodyPopup = 'popup-open';
+
+    const togglePopup = () => {
+      const popupCountAttr = document.body.getAttribute('data-popup-count');
+      let popupCount = (popupCountAttr === '' || popupCountAttr === null)
+        ? 0
+        : Number(popupCountAttr);
+
+      if (popup.classList.contains('active')) {
+        popupCount -= 1;
+        if (popupCount < 1) {
+          document.body.classList.remove(classNameBodyPopup);
+        }
+      } else {
+        popupCount += 1;
+        document.body.classList.add(classNameBodyPopup);
+      }
+
+      document.body.setAttribute('data-popup-count', popupCount);
+
+      popup.classList.toggle(classNameActive);
+    };
+
+    if (popupParams.container === 'js-popup-form') {
+      global.togglePopupForm = togglePopup;
+    }
+
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) togglePopup();
+    });
+
+    Array.prototype.forEach.call(
+      document.getElementsByClassName(popupParams.openButton),
+      elem => elem.addEventListener('click', (e) => {
+        togglePopup();
+        e.preventDefault();
+      }),
+    );
+
+    const popupClose = popup.querySelector('.js-popup-close');
+    if (popupClose === null) return;
+
+    popupClose.addEventListener('click', togglePopup);
   };
 
-  global.togglePopupForm = togglePopup;
-
-  popup.addEventListener('click', (e) => {
-    if (e.target === popup) togglePopup();
-  });
-
-  Array.prototype.forEach.call(
-    document.getElementsByClassName('js-popup-open'),
-    elem => elem.addEventListener('click', (e) => {
-      togglePopup();
-      e.preventDefault();
-    }),
-  );
-
-  const popupClose = popup.querySelector('.js-popup-close');
-  if (popupClose === null) return;
-
-  popupClose.addEventListener('click', togglePopup);
+  popups.forEach(initializePopup);
 })();
 
 

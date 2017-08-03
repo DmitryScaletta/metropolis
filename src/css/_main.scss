@@ -502,6 +502,7 @@
     max-width: 160px;
     font-size: 12px;
     line-height: 1.33;
+    cursor: pointer;
 
     @media (min-width: $screen-sm) {
       bottom: 40px;
@@ -2169,6 +2170,36 @@
 
   &.active {
     display: block;
+  }
+
+  &__content {
+    @extend %container;
+
+    overflow: hidden;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+    border-radius: 2px;
+    border-top-right-radius: 45px;
+    border: 1px solid $color-bg-light;
+    background: #fff;
+
+    @media (min-width: $screen-sm) {
+      padding: 0 25px;
+    }
+
+    @media (min-width: $screen-md) {
+      padding: 0 50px;
+    }
+  }
+
+  &__close {
+    @extend %close-popup-button;
+
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 50%;
   }
 
   .circle-form {
