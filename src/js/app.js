@@ -168,11 +168,9 @@ $('.js-slider-partners').owlCarousel({
 
 // form validation
 (() => {
-  const isRequired = value => value.trim() !== '';
-
   const isFieldValid = (field, validationType) => {
     switch (validationType) {
-      case 'isRequired': return isRequired(field.element.value);
+      case 'isRequired': return field.element.value.trim() !== '';
       case 'isInteger':  return isInt(field.element.value, field.rules.isInteger);
       default: return false;
     }
@@ -215,11 +213,11 @@ $('.js-slider-partners').owlCarousel({
       if (rules.isInteger === true) {
         rules.isInteger = {};
 
-        const attrMax = element.getAttribute('max');
         const attrMin = element.getAttribute('min');
+        const attrMax = element.getAttribute('max');
 
-        if (attrMax !== '' && attrMax !== null) rules.isInteger.max = Number(attrMax);
         if (attrMin !== '' && attrMin !== null) rules.isInteger.min = Number(attrMin);
+        if (attrMax !== '' && attrMax !== null) rules.isInteger.max = Number(attrMax);
       }
 
       return { element, rules, tooltips: {} };
@@ -243,6 +241,7 @@ $('.js-slider-partners').owlCarousel({
             // eslint-disable-next-line no-param-reassign
             field.tooltips[validationType] = createTooltip(field, validationType);
           }
+
           field.tooltips[validationType].show();
 
           return false;
@@ -306,7 +305,7 @@ $('.js-slider-partners').owlCarousel({
     ],
   };
 
-  const circleFormHandleSubmit = (formContainer) => {
+  const createCircleFormHandleSubmit = (formContainer) => {
     const isFormValid = createFormValidator(formContainer, circleForm.fields);
 
     return (e) => {
@@ -314,11 +313,11 @@ $('.js-slider-partners').owlCarousel({
 
       if (!isFormValid()) return;
 
-      formContainer.classList.add('success');
+      formcontainer.classList.add('success');
     };
   };
 
-  const mainFormHandleSubmit = (formContainer) => {
+  const createMainFormHandleSubmit = (formContainer) => {
     const isFormValid = createFormValidator(formContainer, form.fields);
 
     return (e) => {
@@ -334,7 +333,7 @@ $('.js-slider-partners').owlCarousel({
     document.querySelectorAll(circleForm.container),
     formContainer => formContainer.addEventListener(
       'submit',
-      circleFormHandleSubmit(formContainer),
+      createCircleFormHandleSubmit(formContainer),
     ),
   );
 
@@ -342,7 +341,7 @@ $('.js-slider-partners').owlCarousel({
     document.querySelectorAll(form.container),
     formContainer => formContainer.addEventListener(
       'submit',
-      mainFormHandleSubmit(formContainer),
+      createMainFormHandleSubmit(formContainer),
     ),
   );
 })();
