@@ -34,6 +34,7 @@
     "stylelint-config-standard": "^17.0.0"
   },
   "dependencies": {
+    "fontfaceobserver": "^2.0.13",
     "jquery": "^3.2.1",
     "moveto": "^1.6.1",
     "normalize.css": "^7.0.0",
