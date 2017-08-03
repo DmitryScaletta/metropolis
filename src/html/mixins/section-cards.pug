@@ -41,7 +41,7 @@ mixin card-review(review)
       a.card__link.js-card-popup-open Смотреть отзыв полностью
 
 mixin section-cards(items = reviews, type = 'reviews', title = 'Отзывы')
-  section.section
+  section.section.section--overflow-hidden
     .section__inner
       h2.section__title= title
       - var className = (type === 'reviews') ? 'js-card-popup-list' : '';

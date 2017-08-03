@@ -86,11 +86,16 @@
       content: '';
       position: absolute;
       z-index: -2;
+      top: 0;
       left: 0;
       right: 0;
       bottom: $header-margin-bottom;
-      height: 94px;
       background: $color-bg-soft;
+
+      @media (min-width: $screen-lg) {
+        top: auto;
+        height: 94px;
+      }
     }
   }
 
@@ -660,7 +665,10 @@
 .section {
   position: relative;
   padding: 15px 0;
-  // overflow: hidden;
+
+  &--overflow-hidden {
+    overflow: hidden;
+  }
 
   &--gray {
     background: $color-bg-soft;
@@ -672,7 +680,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 465px;
+    height: 75%;
     background: $color-bg-soft;
   }
 
