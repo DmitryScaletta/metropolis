@@ -1767,7 +1767,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(#fff, 0); // IE10 fix
+      background: none; // IE10 fix
     }
 
     &.active {
@@ -2162,7 +2162,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   background: rgba(#000, 0.6);
 
   &.active {
