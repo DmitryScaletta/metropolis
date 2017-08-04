@@ -11,7 +11,7 @@
     "start": "yarn run blendid",
     "build": "yarn run blendid -- build",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "yarn run blendid -- gh-pages"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
