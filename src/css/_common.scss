@@ -95,6 +95,7 @@ img {
 
 .tooltip {
   position: absolute;
+  z-index: 1;
   padding: 10px;
   margin-bottom: 5px;
   font-size: rem(15px);
