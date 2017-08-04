@@ -10,7 +10,6 @@
   "scripts": {
     "start": "yarn run blendid",
     "build": "yarn run blendid -- build",
-    "predeploy": "yarn run build",
     "deploy": "yarn run blendid -- gh-pages"
   },
   "devDependencies": {
