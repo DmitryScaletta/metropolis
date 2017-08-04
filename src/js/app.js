@@ -185,6 +185,9 @@ $('.js-slider-partners').owlCarousel({
 
 // form validation
 (() => {
+  const classNameInvalid = 'invalid';
+  const HIDE_TOOLTIP_TIMEOUT = 5000;
+
   const isFieldValid = (field, validationType) => {
     switch (validationType) {
       case 'isRequired': return field.element.value.trim() !== '';
@@ -217,8 +220,6 @@ $('.js-slider-partners').owlCarousel({
       default: return null;
     }
   };
-
-  const classNameInvalid = 'invalid';
 
   const createFormValidator = (formContainer, formFields) => {
     const fields = formFields.map((field) => {
@@ -260,6 +261,9 @@ $('.js-slider-partners').owlCarousel({
           }
 
           field.tooltips[validationType].show();
+          setTimeout(() => {
+            field.tooltips[validationType].hide();
+          }, HIDE_TOOLTIP_TIMEOUT);
 
           return false;
         }
