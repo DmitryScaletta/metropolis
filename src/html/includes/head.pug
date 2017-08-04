@@ -14,7 +14,7 @@ head
   script.
     // FontFaceObserver
     (function() {
-      if (!window.Promise || sessionStorage.fontsLoaded) {
+      if (!window.Promise || sessionStorage.getItem('fontsLoaded')) {
         document.documentElement.classList.add('fonts-loaded');
       }
     })();

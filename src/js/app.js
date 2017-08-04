@@ -11,17 +11,26 @@ import isInt from 'validator/lib/isInt';
 
 // FontFaceObserver
 (() => {
-  if (!window.Promise) return;
+  if (!window.Promise || sessionStorage.getItem('fontsLoaded')) return;
 
-  const font = new FontFaceObserver('TeX Gyre Heros');
+  const fontName = 'TeX Gyre Heros';
+  const fonts = [];
 
-  font
-    .load()
+  const addFont = (name, options) => fonts.push(new FontFaceObserver(name, options).load());
+
+  [400, 700].forEach((weight) => {
+    addFont(fontName, { weight });
+    addFont(fontName, { weight, style: 'italic' });
+  });
+
+  Promise.all(fonts)
     .then(() => {
-      sessionStorage.fontsLoaded = true;
+      sessionStorage.setItem('fontsLoaded', true);
       document.documentElement.classList.add('fonts-loaded');
     })
-    .catch(() => { sessionStorage.fontsLoaded = false; });
+    .catch(() => {
+      document.documentElement.classList.add('fonts-loaded');
+    });
 })();
 
 
